@@ -7524,7 +7524,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b3283b8dda8a174e9eaa6b6924304e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkingSpeed: 15
+  walkingSpeed: 25
   rotationSpeed: 1
   rotationXLimit: 70
   playerCurrentPosition: {fileID: 11400000, guid: e58c417130ac5dd458b1f9194b17b79a, type: 2}
