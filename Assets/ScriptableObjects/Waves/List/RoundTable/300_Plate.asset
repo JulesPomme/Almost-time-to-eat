@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ac079ded87f8ab41854d4c06d539a21, type: 3}
+  m_Name: 300_Plate
+  m_EditorClassIdentifier: 
+  tableware: {fileID: 11400000, guid: 7c6f0a3b082ce3d4eac8d9739c8a893c, type: 2}
+  zonePrefab: {fileID: 244858650104072977, guid: ab799d5327cc48a4484e6daafb31d53e, type: 3}
+  zonePosition: {x: 1.85, y: 0.5, z: -3.17}
+  zoneLocalPosition: {x: 0.2, y: -0.34, z: -0.05}
