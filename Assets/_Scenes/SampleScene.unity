@@ -170,6 +170,7 @@ MonoBehaviour:
   type: 1
   gameObjectSO: {fileID: 0}
   vector3SO: {fileID: 11400000, guid: 2dc50004b03e08f499aed8664bcf820f, type: 2}
+  update: 1
 --- !u!1 &41137055
 GameObject:
   m_ObjectHideFlags: 0
