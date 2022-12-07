@@ -1411,10 +1411,26 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7760424551396301322, guid: 599d9f37af418754cb79d0ed59500efd, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e99409b01358e8a4cbbb2229f964d87a, type: 2}
+    - target: {fileID: -6252346080297810345, guid: 599d9f37af418754cb79d0ed59500efd, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e99409b01358e8a4cbbb2229f964d87a, type: 2}
     - target: {fileID: -4181946492451371123, guid: 599d9f37af418754cb79d0ed59500efd, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: c0267be3c1d4f1e43b5fd8c0322b60b6, type: 2}
+    - target: {fileID: -2565291203616766233, guid: 599d9f37af418754cb79d0ed59500efd, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 476f6fe11da82584da856fe9706d7a34, type: 2}
+    - target: {fileID: -2416905772720732842, guid: 599d9f37af418754cb79d0ed59500efd, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 476f6fe11da82584da856fe9706d7a34, type: 2}
     - target: {fileID: -1856683155476062260, guid: 599d9f37af418754cb79d0ed59500efd, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -1422,7 +1438,7 @@ PrefabInstance:
     - target: {fileID: 916750672733739713, guid: 599d9f37af418754cb79d0ed59500efd, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: c0267be3c1d4f1e43b5fd8c0322b60b6, type: 2}
+      objectReference: {fileID: 2100000, guid: e99409b01358e8a4cbbb2229f964d87a, type: 2}
     - target: {fileID: 919132149155446097, guid: 599d9f37af418754cb79d0ed59500efd, type: 3}
       propertyPath: m_Name
       value: Chaise
@@ -1447,6 +1463,18 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: c0267be3c1d4f1e43b5fd8c0322b60b6, type: 2}
+    - target: {fileID: 5778674452449903136, guid: 599d9f37af418754cb79d0ed59500efd, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e99409b01358e8a4cbbb2229f964d87a, type: 2}
+    - target: {fileID: 7581146141621860792, guid: 599d9f37af418754cb79d0ed59500efd, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e99409b01358e8a4cbbb2229f964d87a, type: 2}
+    - target: {fileID: 7932837501668419975, guid: 599d9f37af418754cb79d0ed59500efd, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e99409b01358e8a4cbbb2229f964d87a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 599d9f37af418754cb79d0ed59500efd, type: 3}
 --- !u!4 &8373572064147510606 stripped
