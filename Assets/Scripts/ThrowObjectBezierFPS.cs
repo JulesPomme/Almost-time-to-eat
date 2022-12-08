@@ -37,7 +37,7 @@ public class ThrowObjectBezierFPS : MonoBehaviour {
             if (Input.GetMouseButtonUp(0)) {//...and throw an object at mouse releasing...
                 GameObject clone = Instantiate<GameObject>(((TablewareSO)availableTablewares.list[availableTablewares.cursor]).prefab);
                 clone.transform.position = throwingPoint.value;
-                GameObject tableTopSurface = IsUponTableTopSurface(target);
+                GameObject tableTopSurface = GetTableTopSurfaceUnder(target);
                 if (tableTopSurface != null) {
                     float orientation = clone.transform.eulerAngles.y + Vector3.SignedAngle(Vector3.right, hit.point - tableTopSurface.transform.position, Vector3.up);
                     clone.transform.eulerAngles = new Vector3(clone.transform.eulerAngles.x, orientation, clone.transform.eulerAngles.z);
@@ -59,18 +59,14 @@ public class ThrowObjectBezierFPS : MonoBehaviour {
         }
     }
 
-    private GameObject IsUponTableTopSurface(GameObject target) {
+    private GameObject GetTableTopSurfaceUnder(GameObject target) {
         GameObject topSurface = null;
         RaycastHit[] hits = Physics.RaycastAll(target.transform.position, Vector3.down);
-        //Debug.Log("Under there are " + hits.Length + " objects with a collider");
-        //Debug.DrawRay(obj.transform.position, Vector3.down, Color.red);
-        //Debug.Break();
         int i = 0;
         while (topSurface == null && i < hits.Length) {
             if (IsTableTopSurface(hits[i].collider.gameObject)) {
                 topSurface = hits[i].collider.gameObject;
             }
-            //Debug.Log("\t Checking if " + hits[i].collider.gameObject.name + " is a table top surface = " + res);
             i++;
         }
         return topSurface;
