@@ -341,6 +341,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -681667656727170516, guid: 8e5155f3249719643bdc351d15e559b3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6c1d464ecaf4fc44082479e6dca6fdf4, type: 2}
     - target: {fileID: 919132149155446097, guid: 8e5155f3249719643bdc351d15e559b3, type: 3}
       propertyPath: m_Name
       value: Plate
