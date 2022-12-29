@@ -45,58 +45,12 @@ public class ThrowObjectBezierFPS : MonoBehaviour {
                 tw.transform.position = throwingPoint.value;
                 TableStruct? tableStruct = GetTableUnder(target);
                 if (tableStruct.HasValue) {
-                    //Debug.Log("Table at " + tableStruct.Value.instance.transform.position);
+                    //Rotate the tableware towards the anchor if exists
                     Vector3? anchor = GetAnchorWithNearestCompass(tableStruct.Value, target);
                     if (anchor != null) {
-                        //Debug.Log("Found anchor at " + anchor.Value);
-                        Vector3 compass = Utils.GetVectorInLocalSpace(tablewareInHand.reference.orientationCompass, tw.transform) + target.transform.position; //compass position in world space, relatively to the target
-                        Quaternion rotationToAnchor = Quaternion.FromToRotation(compass - target.transform.position, anchor.Value - target.transform.position);
+                        Quaternion rotationToAnchor = Quaternion.LookRotation(anchor.Value - target.transform.position, Vector3.up);
                         tw.transform.rotation = rotationToAnchor;
-                        Debug.Break();
-                        //Debug.Log("target is at " + target.transform.position);
-                        //Debug.Log("Compass is at " + compass);
-                        //Debug.DrawLine(target.transform.position, anchor.Value, Color.magenta);
-                        //Debug.DrawLine(target.transform.position, compass, Color.red);
-                        //Debug.Log("compass of " + tablewareInHand.reference.name + ", relative position =" + tablewareInHand.reference.orientationCompass);
-                        //Vector3 compass2 = Utils.GetVectorInLocalSpace(tablewareInHand.reference.orientationCompass, tw.transform) + tw.transform.position; //DEBUG
-                        //Debug.DrawLine(tw.transform.position, compass2, Color.red);
-                        //Debug.DrawRay(tw.transform.position, anchor.Value - target.transform.position, Color.magenta);
-                        //Debug.Log("We need to rotate tw between " + (compass - target.transform.position) + " and " + (anchor.Value - target.transform.position));
-                        //GameObject clone = Instantiate(tw);
-                        //clone.transform.position = tw.transform.position;
-                        //clone.transform.eulerAngles = tw.transform.eulerAngles;
-                        //clone.transform.localScale = tw.transform.lossyScale;
-                        //clone.name = "Fork Init";
-                        //Vector3 angleVec = Utils.GetAngleVec(compass - target.transform.position, anchor.Value - target.transform.position);
-                        //Debug.Log("Angle vec = " + angleVec);
-                        //float angleX = Utils.GetAngleAlongX(compass - target.transform.position, anchor.Value - target.transform.position);
-                        //tw.transform.eulerAngles = new Vector3(tw.transform.eulerAngles.x + angleX, tw.transform.eulerAngles.y, tw.transform.eulerAngles.z);
-                        //Debug.Log("angleX = " + angleX);
-                        //clone = Instantiate(tw);
-                        //clone.transform.position = tw.transform.position;
-                        //clone.transform.eulerAngles = tw.transform.eulerAngles;
-                        //clone.transform.localScale = tw.transform.lossyScale;
-                        //clone.name = "Fork X";
-                        //compass = Utils.GetVectorInLocalSpace(tablewareInHand.reference.orientationCompass, tw.transform) + target.transform.position; //new compass position in world space after X rotation of clone
-                        //float angleY = Utils.GetAngleAlongY(compass - target.transform.position, anchor.Value - target.transform.position);
-                        //tw.transform.eulerAngles = new Vector3(tw.transform.eulerAngles.x, tw.transform.eulerAngles.y + angleY, tw.transform.eulerAngles.z);
-                        //Debug.Log("angleY = " + angleY);
-                        //clone = Instantiate(tw);
-                        //clone.transform.position = tw.transform.position;
-                        //clone.transform.eulerAngles = tw.transform.eulerAngles;
-                        //clone.transform.localScale = tw.transform.lossyScale;
-                        //clone.name = "Fork Y";
-                        //compass = Utils.GetVectorInLocalSpace(tablewareInHand.reference.orientationCompass, tw.transform) + target.transform.position; //new compass position in world space after Y rotation of clone
-                        //float angleZ = Utils.GetAngleAlongZ(compass - target.transform.position, anchor.Value - target.transform.position);
-                        //tw.transform.eulerAngles = new Vector3(tw.transform.eulerAngles.x, tw.transform.eulerAngles.y, tw.transform.eulerAngles.z + angleZ);
-                        //Debug.Log("angleZ = " + angleZ);
-                        //Debug.DrawRay(tw.transform.position, Vector3.right, Color.white);
-                        //Debug.DrawRay(tw.transform.position, Vector3.up, Color.green);
-                        //Debug.DrawRay(tw.transform.position, Vector3.forward, Color.blue);
-                        //Debug.Break();
                     }
-                    //float orientation = clone.transform.eulerAngles.y + Vector3.SignedAngle(Vector3.right, hit.point - tableTopSurface.transform.position, Vector3.up);
-                    //clone.transform.eulerAngles = new Vector3(clone.transform.eulerAngles.x, orientation, clone.transform.eulerAngles.z);
                 }
                 tw.transform.parent = transform.parent;
 

@@ -438,7 +438,6 @@ MonoBehaviour:
   topSurface: {fileID: 8278296896005828040}
   table: {fileID: 0}
   resetObservation: {fileID: 11400000, guid: 236bb24bfe45dc54aae525a142f5e637, type: 2}
-  tableList: {fileID: 11400000, guid: ed6f653417aedbc4080f143456729208, type: 2}
   alertBubble: {fileID: 5749752111271843774}
   nbCompletedTables: {fileID: 11400000, guid: a4c2549213729524ebe9829596d278e0, type: 2}
   bubbleSlider: {fileID: 2829321187915277559}
