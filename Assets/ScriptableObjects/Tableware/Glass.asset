@@ -15,3 +15,4 @@ MonoBehaviour:
   prefab: {fileID: 8382120999269282670, guid: aee92ed870aa9ba458b7c4dd4672806d, type: 3}
   ghostPrefab: {fileID: 8382120999269282670, guid: bfc11ee77635f0247b52749482b3b597, type: 3}
   selectorIcon: {fileID: 21300000, guid: 6467587f70b4cbf42944204dbd0e06a2, type: 3}
+  orientationCompass: {x: 0, y: 0, z: -0.23}

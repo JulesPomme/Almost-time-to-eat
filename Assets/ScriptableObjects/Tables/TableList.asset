@@ -13,5 +13,9 @@ MonoBehaviour:
   m_Name: TableList
   m_EditorClassIdentifier: 
   list:
-  - {fileID: 11400000, guid: d28a89892a473554a846bcfcf7e6ab26, type: 2}
+  - {fileID: 11400000, guid: 9da055c0cda29e2499c8f8ffce2d051c, type: 2}
+  - {fileID: 11400000, guid: 6690be51c2763da40bfca377ae495559, type: 2}
+  - {fileID: 11400000, guid: ca2ac280bedb9e843b9a8e6b1976fc6c, type: 2}
+  - {fileID: 11400000, guid: d3161a436ba518345b6ad9df6c460050, type: 2}
+  - {fileID: 11400000, guid: 959fb605b17c0ba4cbc34af491726323, type: 2}
   cursor: 0

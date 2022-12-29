@@ -13,8 +13,14 @@ public class ThrowObjectBezierFPS : MonoBehaviour {
     public GameObject targetPrefab;
     public ScriptableObjectListSO tableList;
     public ScriptableObjectListSO availableTablewares;
+    public TablewareInstanceSO tablewareInHand;
 
     private GameObject target;
+
+    private struct TableStruct {
+        public TableSO reference;
+        public GameObject instance;
+    }
 
     void Start() {
         target = Instantiate<GameObject>(targetPrefab);
@@ -35,53 +41,110 @@ public class ThrowObjectBezierFPS : MonoBehaviour {
             target.transform.position = new Vector3(hit.point.x, hit.point.y, hit.point.z) + (target.transform.forward / 10f);
 
             if (Input.GetMouseButtonUp(0)) {//...and throw an object at mouse releasing...
-                GameObject clone = Instantiate<GameObject>(((TablewareSO)availableTablewares.list[availableTablewares.cursor]).prefab);
-                clone.transform.position = throwingPoint.value;
-                GameObject tableTopSurface = GetTableTopSurfaceUnder(target);
-                if (tableTopSurface != null) {
-                    float orientation = clone.transform.eulerAngles.y + Vector3.SignedAngle(Vector3.right, hit.point - tableTopSurface.transform.position, Vector3.up);
-                    clone.transform.eulerAngles = new Vector3(clone.transform.eulerAngles.x, orientation, clone.transform.eulerAngles.z);
+                GameObject tw = tablewareInHand.obj;
+                tw.transform.position = throwingPoint.value;
+                TableStruct? tableStruct = GetTableUnder(target);
+                if (tableStruct.HasValue) {
+                    //Debug.Log("Table at " + tableStruct.Value.instance.transform.position);
+                    Vector3? anchor = GetAnchorWithNearestCompass(tableStruct.Value, target);
+                    if (anchor != null) {
+                        //Debug.Log("Found anchor at " + anchor.Value);
+                        Vector3 compass = Utils.GetVectorInLocalSpace(tablewareInHand.reference.orientationCompass, tw.transform) + target.transform.position; //compass position in world space, relatively to the target
+                        Quaternion rotationToAnchor = Quaternion.FromToRotation(compass - target.transform.position, anchor.Value - target.transform.position);
+                        tw.transform.rotation = rotationToAnchor;
+                        Debug.Break();
+                        //Debug.Log("target is at " + target.transform.position);
+                        //Debug.Log("Compass is at " + compass);
+                        //Debug.DrawLine(target.transform.position, anchor.Value, Color.magenta);
+                        //Debug.DrawLine(target.transform.position, compass, Color.red);
+                        //Debug.Log("compass of " + tablewareInHand.reference.name + ", relative position =" + tablewareInHand.reference.orientationCompass);
+                        //Vector3 compass2 = Utils.GetVectorInLocalSpace(tablewareInHand.reference.orientationCompass, tw.transform) + tw.transform.position; //DEBUG
+                        //Debug.DrawLine(tw.transform.position, compass2, Color.red);
+                        //Debug.DrawRay(tw.transform.position, anchor.Value - target.transform.position, Color.magenta);
+                        //Debug.Log("We need to rotate tw between " + (compass - target.transform.position) + " and " + (anchor.Value - target.transform.position));
+                        //GameObject clone = Instantiate(tw);
+                        //clone.transform.position = tw.transform.position;
+                        //clone.transform.eulerAngles = tw.transform.eulerAngles;
+                        //clone.transform.localScale = tw.transform.lossyScale;
+                        //clone.name = "Fork Init";
+                        //Vector3 angleVec = Utils.GetAngleVec(compass - target.transform.position, anchor.Value - target.transform.position);
+                        //Debug.Log("Angle vec = " + angleVec);
+                        //float angleX = Utils.GetAngleAlongX(compass - target.transform.position, anchor.Value - target.transform.position);
+                        //tw.transform.eulerAngles = new Vector3(tw.transform.eulerAngles.x + angleX, tw.transform.eulerAngles.y, tw.transform.eulerAngles.z);
+                        //Debug.Log("angleX = " + angleX);
+                        //clone = Instantiate(tw);
+                        //clone.transform.position = tw.transform.position;
+                        //clone.transform.eulerAngles = tw.transform.eulerAngles;
+                        //clone.transform.localScale = tw.transform.lossyScale;
+                        //clone.name = "Fork X";
+                        //compass = Utils.GetVectorInLocalSpace(tablewareInHand.reference.orientationCompass, tw.transform) + target.transform.position; //new compass position in world space after X rotation of clone
+                        //float angleY = Utils.GetAngleAlongY(compass - target.transform.position, anchor.Value - target.transform.position);
+                        //tw.transform.eulerAngles = new Vector3(tw.transform.eulerAngles.x, tw.transform.eulerAngles.y + angleY, tw.transform.eulerAngles.z);
+                        //Debug.Log("angleY = " + angleY);
+                        //clone = Instantiate(tw);
+                        //clone.transform.position = tw.transform.position;
+                        //clone.transform.eulerAngles = tw.transform.eulerAngles;
+                        //clone.transform.localScale = tw.transform.lossyScale;
+                        //clone.name = "Fork Y";
+                        //compass = Utils.GetVectorInLocalSpace(tablewareInHand.reference.orientationCompass, tw.transform) + target.transform.position; //new compass position in world space after Y rotation of clone
+                        //float angleZ = Utils.GetAngleAlongZ(compass - target.transform.position, anchor.Value - target.transform.position);
+                        //tw.transform.eulerAngles = new Vector3(tw.transform.eulerAngles.x, tw.transform.eulerAngles.y, tw.transform.eulerAngles.z + angleZ);
+                        //Debug.Log("angleZ = " + angleZ);
+                        //Debug.DrawRay(tw.transform.position, Vector3.right, Color.white);
+                        //Debug.DrawRay(tw.transform.position, Vector3.up, Color.green);
+                        //Debug.DrawRay(tw.transform.position, Vector3.forward, Color.blue);
+                        //Debug.Break();
+                    }
+                    //float orientation = clone.transform.eulerAngles.y + Vector3.SignedAngle(Vector3.right, hit.point - tableTopSurface.transform.position, Vector3.up);
+                    //clone.transform.eulerAngles = new Vector3(clone.transform.eulerAngles.x, orientation, clone.transform.eulerAngles.z);
                 }
-                clone.transform.parent = transform;
+                tw.transform.parent = transform.parent;
 
-                StartCoroutine(ThrowObjectWithBezierCoroutine(clone, hit.point));
+                StartCoroutine(ThrowObjectWithBezierCoroutine(tw, hit.point));
 
                 TablewareInstanceListSO.Container container = new TablewareInstanceListSO.Container();
-                container.instance = clone;
-                container.reference = ((TablewareSO)availableTablewares.list[availableTablewares.cursor]);
-                container.objectsWithColliders = GetObjectsWithColliders(clone);
+                container.instance = tw;
+                container.reference = (TablewareSO)availableTablewares.list[availableTablewares.cursor];
+                container.objectsWithColliders = GetChildrenWithColliders(tw);
                 instantiatedTablewares.list.Add(container);
                 woosh.pitch = Random.Range(0.8f, 1.2f);
                 woosh.Play();
+
+                //Remove this tableware from the player's hand.
+                tablewareInHand.obj = null;
             }
         } else { //If the player is pointing nothing, hide the target
             target.SetActive(false);
         }
     }
 
-    private GameObject GetTableTopSurfaceUnder(GameObject target) {
-        GameObject topSurface = null;
+    /// <summary>
+    /// Return the table top surface under the specified target if existing ("under" meaning along the Vector3.down axis). If no table is under the target, return null.
+    /// </summary>
+    /// <param name="target"></param>
+    /// <returns></returns>
+    private TableStruct? GetTableUnder(GameObject target) {
+
+        TableStruct? res = null;
         RaycastHit[] hits = Physics.RaycastAll(target.transform.position, Vector3.down);
         int i = 0;
-        while (topSurface == null && i < hits.Length) {
-            if (IsTableTopSurface(hits[i].collider.gameObject)) {
-                topSurface = hits[i].collider.gameObject;
-            }
-            i++;
-        }
-        return topSurface;
-    }
-
-    private bool IsTableTopSurface(GameObject obj) {
-
-        bool res = false;
-        int i = 0;
-        while (!res && i < tableList.list.Count) {
+        while (res == null && i < hits.Length) { //For each object the ray collided with
+            GameObject objectToAssess = hits[i].collider.gameObject;
             int j = 0;
-            while (!res && j < ((TableSO)tableList.list[i]).instances.Count) {
-                GameObject tableInstance = ((TableSO)tableList.list[i]).instances[j];
-                if (tableInstance != null) {
-                    res = tableInstance.GetComponent<TableHandler>().topSurface == obj;
+            while (res == null && j < tableList.list.Count) {//for each table SO
+                TableSO tableSO = ((TableSO)tableList.list[j]);
+                int k = 0;
+                while (res == null && k < tableSO.instances.Count) {//for each table instance of the current table SO
+                    GameObject tableInstance = tableSO.instances[k];
+                    if (tableInstance != null) {
+                        if (tableInstance.GetComponent<TableHandler>().topSurface == objectToAssess) {
+                            TableStruct tableStruct = new TableStruct();
+                            tableStruct.reference = tableSO;
+                            tableStruct.instance = tableInstance;
+                            res = tableStruct;
+                        }
+                    }
+                    k++;
                 }
                 j++;
             }
@@ -90,26 +153,48 @@ public class ThrowObjectBezierFPS : MonoBehaviour {
         return res;
     }
 
-    private IEnumerator ThrowObjectWithBezierCoroutine(GameObject clone, Vector3 targetPoint) {
+    private Vector3? GetAnchorWithNearestCompass(TableStruct tableStruct, GameObject target) {
 
-        EnablePhysics(clone, false);
+        Vector3? res = null;
+
+        TableSO.OrientationBinder[] orientationBinders = tableStruct.reference.orientationBinders;
+        float minDist = float.MaxValue;
+        for (int i = 0; i < orientationBinders.Length; i++) {
+            TableSO.OrientationBinder binder = orientationBinders[i];
+            TablewareZoneSO[] compasses = binder.compasses;
+            for (int j = 0; j < compasses.Length; j++) {
+                Vector3 zonePosition = Utils.GetVectorInLocalSpace(compasses[j].zoneLocalPosition, tableStruct.instance.transform) + tableStruct.instance.transform.position;
+                float dist = (target.transform.position - zonePosition).sqrMagnitude;
+                if (dist < minDist) {
+                    minDist = dist;
+                    res = Utils.GetVectorInLocalSpace(binder.anchor, tableStruct.instance.transform) + tableStruct.instance.transform.position;
+                }
+            }
+        }
+
+        return res;
+    }
+
+    private IEnumerator ThrowObjectWithBezierCoroutine(GameObject obj, Vector3 targetPoint) {
+
+        Utils.EnablePhysics(obj, false);
         float t = 0;
-        Vector3 initPoint = new Vector3(clone.transform.position.x, clone.transform.position.y, clone.transform.position.z);
+        Vector3 initPoint = new Vector3(obj.transform.position.x, obj.transform.position.y, obj.transform.position.z);
         Vector3 p1 = initPoint + ((targetPoint - initPoint) / 2f) + new Vector3(0, 2, 0);
         while (t < throwingDuration) {
-            if (clone == null) {
+            if (obj == null) {
                 //This can happen if the player resets the game while this object is being thrown. If so, end the coroutine now.
                 yield break;
             }
             float ratio = t / throwingDuration;
-            clone.transform.position = CalculateQuadraticBezierPoint(ratio, initPoint, p1, targetPoint);
+            obj.transform.position = CalculateQuadraticBezierPoint(ratio, initPoint, p1, targetPoint);
             yield return new WaitForSeconds(Time.deltaTime);
             t += Time.deltaTime;
         }
-        if (clone != null) {
+        if (obj != null) {
             //This can happen if the player resets the game while this object is being thrown. If so, end the coroutine now.
-            clone.transform.position = CalculateQuadraticBezierPoint(1, initPoint, p1, targetPoint);
-            EnablePhysics(clone, true);
+            obj.transform.position = CalculateQuadraticBezierPoint(1, initPoint, p1, targetPoint);
+            Utils.EnablePhysics(obj, true);
         }
     }
 
@@ -122,30 +207,16 @@ public class ThrowObjectBezierFPS : MonoBehaviour {
         return uu * p0 + 2 * u * t * p1 + tt * p2;
     }
 
-    private List<GameObject> GetObjectsWithColliders(GameObject clone) {
+    private List<GameObject> GetChildrenWithColliders(GameObject obj) {
         List<GameObject> res = new List<GameObject>();
-        if (clone.GetComponent<Collider>() != null && !clone.GetComponent<Collider>().isTrigger) {
-            res.Add(clone);
+        if (obj.GetComponent<Collider>() != null && !obj.GetComponent<Collider>().isTrigger) {
+            res.Add(obj);
         }
-        foreach (Collider collider in clone.GetComponentsInChildren<Collider>()) {
+        foreach (Collider collider in obj.GetComponentsInChildren<Collider>()) {
             if (!collider.isTrigger) {
                 res.Add(collider.gameObject);
             }
         }
         return res;
-    }
-
-    private void EnablePhysics(GameObject obj, bool e) {
-        if (obj.GetComponent<Collider>() != null)
-            obj.GetComponent<Collider>().enabled = e;
-        foreach (Collider collider in obj.GetComponentsInChildren<Collider>()) {
-            collider.enabled = e;
-        }
-
-        if (obj.GetComponent<Rigidbody>() != null)
-            obj.GetComponent<Rigidbody>().isKinematic = !e;
-        foreach (Rigidbody rgbd in obj.GetComponentsInChildren<Rigidbody>()) {
-            rgbd.isKinematic = !e;
-        }
     }
 }

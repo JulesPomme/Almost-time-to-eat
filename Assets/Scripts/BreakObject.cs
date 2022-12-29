@@ -18,7 +18,7 @@ public class BreakObject : MonoBehaviour
         alreadyCollided = false;
     }
     private void OnCollisionEnter(Collision collision) {
-        bool isBreaker = collision.gameObject.tag == "Tableware" || collision.gameObject.tag == "Ground";
+        bool isBreaker = collision.gameObject.tag == "Tableware" || collision.gameObject.tag == "Breaker";
         if (isBreaker && !alreadyCollided) {
             GameObject brokenClone = Instantiate<GameObject>(brokenPrefab, transform.position, transform.rotation);
             //Raise the broken object a little bit, otherwise it comes up with an explosion (can't really understand why...)

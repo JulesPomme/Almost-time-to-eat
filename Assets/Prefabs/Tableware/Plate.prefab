@@ -133,7 +133,7 @@ MeshCollider:
   m_GameObject: {fileID: 3501954814183167798}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
@@ -151,6 +151,7 @@ GameObject:
   - component: {fileID: 6809124475963871211}
   - component: {fileID: 6809124475963871212}
   - component: {fileID: 5801935250843782141}
+  - component: {fileID: -6666922221323041382}
   m_Layer: 0
   m_Name: Plate
   m_TagString: Tableware
@@ -270,6 +271,19 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 781ba7d9d52a651458bd2e672c1c78ae, type: 3}
   - {fileID: 8300000, guid: bf38e4826bbf5474b900555e51676305, type: 3}
   - {fileID: 8300000, guid: 5cb4d2ba5d73d9446a502dd083532bac, type: 3}
+--- !u!114 &-6666922221323041382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6809124475963871209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67f5aaaf8d59396468d600b9303d5259, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value: {fileID: 0}
 --- !u!1001 &6821479164585218799
 PrefabInstance:
   m_ObjectHideFlags: 0

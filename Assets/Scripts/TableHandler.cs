@@ -6,7 +6,6 @@ public class TableHandler : MonoBehaviour {
     public GameObject topSurface;
     public TableSO table;
     public ObservationSO resetObservation;
-    public ScriptableObjectListSO tableList;
     public GameObject alertBubble;
     public IntegerSO nbCompletedTables;
     public RectTransform bubbleSlider;
@@ -19,15 +18,12 @@ public class TableHandler : MonoBehaviour {
 
     private void Awake() {
         table.instances.Clear();
-        tableList.list.Clear();
     }
 
     private void Start() {
         resetId = resetObservation.AddObserver();
         zones = new List<GameObject>();
         table.instances.Add(gameObject);
-        if (!tableList.list.Contains(table))
-            tableList.list.Add(table);
         InstantiateZones();
     }
 
@@ -36,8 +32,10 @@ public class TableHandler : MonoBehaviour {
         for (int j = 0; j < zoneList.list.Count; j++) {
             TablewareZoneSO zoneSO = ((TablewareZoneSO)zoneList.list[j]);
             GameObject zone = Instantiate(zoneSO.zonePrefab);
-            zone.GetComponentInChildren<SetGhostTableware>().ghostPrefab = zoneSO.tableware.ghostPrefab;
-            zone.GetComponentInChildren<SetGhostTableware>().table = gameObject;
+            SetGhostTableware ghostScript = zone.GetComponentInChildren<SetGhostTableware>();
+            ghostScript.SetTableSO(table);
+            ghostScript.SetZoneSO(zoneSO);
+            ghostScript.SetTableInstanceTransform(transform);
             zone.GetComponentInChildren<UpdateScore>().myTableware = zoneSO.tableware;
             zones.Add(zone);
             zone.transform.parent = transform;
@@ -46,9 +44,14 @@ public class TableHandler : MonoBehaviour {
         maxZoneCount = zones.Count;
     }
 
+    private Vector3 GetAnchorForZone(TablewareZoneSO zone) {
+
+        return Vector3.zero;
+    }
+
     private void Update() {
 
-        //If all tableware of,the table have been set
+        //If all tablewares of the table have been set
         for (int i = zones.Count - 1; i >= 0; i--) {
             if (zones[i] == null) {
                 zones.RemoveAt(i);

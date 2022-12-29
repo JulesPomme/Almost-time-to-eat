@@ -12,7 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d33581d299f3012468d1a444b5093d5b, type: 3}
   m_Name: Table1
   m_EditorClassIdentifier: 
-  prefab: {fileID: 3036797699908041353, guid: c87440bdfcf52174089818098c4581a3, type: 3}
-  instance: {fileID: 0}
-  position: {x: -37.81, y: 0, z: -6.8}
+  instances:
+  - {fileID: 0}
   waveList: {fileID: 11400000, guid: d8bd80718e2243840906f3c9c51cf0dc, type: 2}
+  orientationBinders:
+  - anchor: {x: 0, y: 0, z: 0}
+    compasses:
+    - {fileID: 11400000, guid: 097a4d15b77fcb948b314a72eae76aeb, type: 2}
+    - {fileID: 11400000, guid: 21da0b1403ee20444b05f91d266e935e, type: 2}
+    - {fileID: 11400000, guid: 92134a8f04cc91244b257f8cf31697b3, type: 2}
+    - {fileID: 11400000, guid: 538346a1b7236ec428ab7ff4092f890d, type: 2}

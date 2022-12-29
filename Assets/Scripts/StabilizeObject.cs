@@ -9,7 +9,7 @@ public class StabilizeObject : MonoBehaviour
 {
     private Rigidbody rgbd;
 
-    //To make sure we test only when velocity is decreasing
+    //To make sure we check only when velocity is decreasing
     private float prevVelocityMagnitude;
 
     void Start() {

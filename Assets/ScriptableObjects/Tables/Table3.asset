@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d33581d299f3012468d1a444b5093d5b, type: 3}
+  m_Name: Table3
+  m_EditorClassIdentifier: 
+  instances:
+  - {fileID: 0}
+  - {fileID: 0}
+  waveList: {fileID: 11400000, guid: 83c2d1e2c1d1027409f1d6e571a37861, type: 2}
+  orientationBinders:
+  - anchor: {x: 0, y: 0, z: 0}
+    compasses:
+    - {fileID: 11400000, guid: 1a427317e6cafd34a98e4f340fcb707e, type: 2}
+    - {fileID: 11400000, guid: be50bc8f55f451f49bce0befb8e98e30, type: 2}
+    - {fileID: 11400000, guid: cd1c3e56c474fcf43ba0750b9dd599f7, type: 2}
+    - {fileID: 11400000, guid: 3eb7dcf1939ce2f4cb6d72735786c85d, type: 2}
+    - {fileID: 11400000, guid: 3e2dca8a7a9fd06419d3e3b34ced0760, type: 2}
+    - {fileID: 11400000, guid: 24c2d6888585af342a3e9c51a507dc62, type: 2}
+    - {fileID: 11400000, guid: 896926df92771dd4382e0e43df243c48, type: 2}
+    - {fileID: 11400000, guid: 9db4b5c0bb60ef742bf8a8087aca3837, type: 2}
+    - {fileID: 11400000, guid: 097a4d15b77fcb948b314a72eae76aeb, type: 2}
+    - {fileID: 11400000, guid: 21da0b1403ee20444b05f91d266e935e, type: 2}
+    - {fileID: 11400000, guid: 92134a8f04cc91244b257f8cf31697b3, type: 2}
+    - {fileID: 11400000, guid: 538346a1b7236ec428ab7ff4092f890d, type: 2}
