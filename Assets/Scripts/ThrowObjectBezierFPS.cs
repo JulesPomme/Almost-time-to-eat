@@ -131,7 +131,7 @@ public class ThrowObjectBezierFPS : MonoBehaviour {
 
     private IEnumerator ThrowObjectWithBezierCoroutine(GameObject obj, Vector3 targetPoint) {
 
-        Utils.EnablePhysics(obj, false);
+        Utils.EnablePhysics(obj, false);//Maybe useless? Physics are already disabled at the instantiation of the tableware in hand.
         float t = 0;
         Vector3 initPoint = new Vector3(obj.transform.position.x, obj.transform.position.y, obj.transform.position.z);
         Vector3 p1 = initPoint + ((targetPoint - initPoint) / 2f) + new Vector3(0, 2, 0);

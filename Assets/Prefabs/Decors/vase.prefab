@@ -426,9 +426,10 @@ GameObject:
   - component: {fileID: 4431997718186355249}
   - component: {fileID: 6055508474515098369}
   - component: {fileID: 2048465134087958984}
+  - component: {fileID: 6627246034773338117}
   m_Layer: 0
   m_Name: Vase_Cylinder.001
-  m_TagString: Untagged
+  m_TagString: Breaker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -498,6 +499,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &6627246034773338117
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5666571606463245645}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5127920740196261005, guid: 1591037462f82ce449b44cecb187b3c8, type: 3}
 --- !u!1 &7758462264851008849
 GameObject:
   m_ObjectHideFlags: 0

@@ -46,6 +46,7 @@ public class HandleArmAnimation : MonoBehaviour {
         GameObject clone = Instantiate<GameObject>(((TablewareSO)availableTablewares.list[availableTablewares.cursor]).prefab);
         clone.transform.parent = transform;
         clone.transform.position = idlePoint.value;
+        clone.transform.localRotation = Quaternion.identity;
         Utils.EnablePhysics(clone, false);
         tablewareInHand.obj = clone;
         tablewareInHand.reference = (TablewareSO)availableTablewares.list[availableTablewares.cursor];
