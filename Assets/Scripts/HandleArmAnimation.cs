@@ -6,8 +6,8 @@ public class HandleArmAnimation : MonoBehaviour {
 
     public ArmStateHandler currentArmState;
     public ScriptableObjectListSO availableTablewares;
-    public Vector3SO idlePoint;
     public TablewareInstanceSO tablewareInHand;
+    public Vector2 holdTablewareOffset;
 
     private Animator animator;
     private int lastCursor;
@@ -43,16 +43,27 @@ public class HandleArmAnimation : MonoBehaviour {
     }
 
     private void CreateTablewareInHand() {
-        GameObject clone = Instantiate<GameObject>(((TablewareSO)availableTablewares.list[availableTablewares.cursor]).prefab);
+        TablewareSO tableware = ((TablewareSO)availableTablewares.list[availableTablewares.cursor]);
+        GameObject clone = Instantiate(tableware.prefab);
         clone.transform.parent = transform;
-        clone.transform.position = idlePoint.value;
-        clone.transform.localRotation = Quaternion.identity;
+        clone.transform.localPosition = tableware.idleLocalPosition;
+        clone.transform.localEulerAngles = tableware.idleLocalOrientation;
         Utils.EnablePhysics(clone, false);
         tablewareInHand.obj = clone;
         tablewareInHand.reference = (TablewareSO)availableTablewares.list[availableTablewares.cursor];
     }
 
+    /// <summary>
+    /// Called by the throw animation as soon as it is finished.
+    /// </summary>
     public void ThrowAnimationIsFinished() {
         currentArmState.AlertThrowAnimationIsFinished();
+    }
+
+    /// <summary>
+    /// Called by the hold animation as soon as it is started.
+    /// </summary>
+    public void HoldAnimationIsStarted() {
+        tablewareInHand.obj.transform.localPosition = tablewareInHand.obj.transform.localPosition - (holdTablewareOffset.y * tablewareInHand.obj.transform.forward) - (holdTablewareOffset.x * tablewareInHand.obj.transform.right);
     }
 }

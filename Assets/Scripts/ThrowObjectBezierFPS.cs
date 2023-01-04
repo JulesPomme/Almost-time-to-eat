@@ -42,7 +42,7 @@ public class ThrowObjectBezierFPS : MonoBehaviour {
 
             if (Input.GetMouseButtonUp(0)) {//...and throw an object at mouse releasing...
                 GameObject tw = tablewareInHand.obj;
-                tw.transform.position = throwingPoint.value;
+                tw.transform.position = throwingPoint.value; //TODO quand on lance les couverts un peu trop frénétiquement, le tablewareInHand peut parfois être null au moment où on arrive ici.
                 TableStruct? tableStruct = GetTableUnder(target);
                 if (tableStruct.HasValue) {
                     //Rotate the tableware towards the anchor if exists
