@@ -2628,7 +2628,7 @@ MonoBehaviour:
   currentArmState: {fileID: 11400000, guid: 43e982f845100ce46a27d45adbe9cd82, type: 2}
   availableTablewares: {fileID: 11400000, guid: c6f2e875c6fe0444aa4483a1e8973d79, type: 2}
   tablewareInHand: {fileID: 11400000, guid: fdab20a442dc1c54f98e29353a9a7dc2, type: 2}
-  holdTablewareOffset: {x: 0.15, y: 0.4}
+  holdTablewareOffset: {x: 0.15, y: 0.5}
 --- !u!95 &633461448
 Animator:
   serializedVersion: 4
