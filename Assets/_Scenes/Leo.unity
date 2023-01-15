@@ -6829,7 +6829,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: bbddb82e9e5787d418a849728c02e9cf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 558fc032601d2e94db1cc6781cab665c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6873,6 +6873,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentArmState: {fileID: 11400000, guid: 43e982f845100ce46a27d45adbe9cd82, type: 2}
+  availableTablewares: {fileID: 0}
+  tablewareInHand: {fileID: 0}
+  holdTablewareOffset: {x: 0, y: 0}
 --- !u!1 &1762933248
 GameObject:
   m_ObjectHideFlags: 0
@@ -7665,6 +7668,7 @@ MonoBehaviour:
   targetPrefab: {fileID: 624645902745478437, guid: dd5dbf0134ae93e419519cbb8ae516dc, type: 3}
   tableList: {fileID: 11400000, guid: ed6f653417aedbc4080f143456729208, type: 2}
   availableTablewares: {fileID: 11400000, guid: c6f2e875c6fe0444aa4483a1e8973d79, type: 2}
+  tablewareInHand: {fileID: 0}
 --- !u!114 &2118030591
 MonoBehaviour:
   m_ObjectHideFlags: 0
