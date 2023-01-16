@@ -7,7 +7,6 @@ public class HandleArmAnimation : MonoBehaviour {
     public ArmStateHandler currentArmState;
     public ScriptableObjectListSO availableTablewares;
     public TablewareInstanceSO tablewareInHand;
-    public Vector2 holdTablewareOffset;
 
     private Animator animator;
     private int lastCursor;
@@ -64,6 +63,7 @@ public class HandleArmAnimation : MonoBehaviour {
     /// Called by the hold animation as soon as it is started.
     /// </summary>
     public void HoldAnimationIsStarted() {
-        tablewareInHand.obj.transform.localPosition = tablewareInHand.obj.transform.localPosition - (holdTablewareOffset.y * tablewareInHand.obj.transform.forward) - (holdTablewareOffset.x * tablewareInHand.obj.transform.right);
+        tablewareInHand.obj.transform.localPosition = tablewareInHand.reference.holdLocalPosition;
+        tablewareInHand.obj.transform.localEulerAngles = tablewareInHand.reference.holdLocalRotation;
     }
 }

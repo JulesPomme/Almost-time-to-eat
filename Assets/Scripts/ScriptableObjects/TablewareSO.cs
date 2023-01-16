@@ -11,4 +11,6 @@ public class TablewareSO : ScriptableObject
     public Sprite selectorIcon;
     public Vector3 idleLocalPosition;
     public Vector3 idleLocalOrientation;
+    public Vector3 holdLocalPosition;
+    public Vector3 holdLocalRotation;
 }
