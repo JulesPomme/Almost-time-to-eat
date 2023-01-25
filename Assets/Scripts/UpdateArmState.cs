@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class UpdateArmState : MonoBehaviour {
 
-    public ArmStateHandler currentArmState;
+    public ArmStateHandlerSO currentArmState;
+    public BooleanSO isTablewareThrowable;
 
     private void Start() {
         currentArmState.SetToIdle();
     }
 
     void Update() {
-        if (Input.GetMouseButton(0)) {
+        if (Input.GetMouseButton(0) && isTablewareThrowable.value) {
             currentArmState.SetToHold();
         } else if (Input.GetMouseButtonUp(0)) {
             currentArmState.SetToThrow();

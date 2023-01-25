@@ -1534,7 +1534,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &346434736
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7054,13 +7054,13 @@ MonoBehaviour:
   throwingForceMax: {fileID: 11400000, guid: 847a6a2be8c1f914cb33e9694fba4ddb, type: 2}
   instantiatedTablewares: {fileID: 11400000, guid: f7363cdaef43ea148b5e7726aec3db22, type: 2}
   woosh: {fileID: 2118030585}
-  throwingDirection: {fileID: 11400000, guid: 4291b2152fd330e4c8a7e5dd75c72c78, type: 2}
   throwingDuration: 0.5
-  showTarget: 1
-  targetPrefab: {fileID: 624645902745478437, guid: dd5dbf0134ae93e419519cbb8ae516dc, type: 3}
   tableList: {fileID: 11400000, guid: ed6f653417aedbc4080f143456729208, type: 2}
   availableTablewares: {fileID: 11400000, guid: c6f2e875c6fe0444aa4483a1e8973d79, type: 2}
   tablewareInHand: {fileID: 11400000, guid: fdab20a442dc1c54f98e29353a9a7dc2, type: 2}
+  showTarget: 1
+  targetPrefab: {fileID: 624645902745478437, guid: dd5dbf0134ae93e419519cbb8ae516dc, type: 3}
+  isTablewareThrowable: {fileID: 0}
 --- !u!114 &2118030591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7087,6 +7087,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentArmState: {fileID: 11400000, guid: 43e982f845100ce46a27d45adbe9cd82, type: 2}
+  isTablewareThrowable: {fileID: 11400000, guid: ced03bd0b65c3484aa9d724bf0bbd344, type: 2}
 --- !u!1 &2124193989
 GameObject:
   m_ObjectHideFlags: 0

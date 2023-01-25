@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HandleArmAnimation : MonoBehaviour {
 
-    public ArmStateHandler currentArmState;
+    public ArmStateHandlerSO currentArmState;
     public ScriptableObjectListSO availableTablewares;
     public TablewareInstanceSO tablewareInHand;
 

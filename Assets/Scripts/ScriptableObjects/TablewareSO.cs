@@ -4,8 +4,7 @@ using UnityEngine;
 
 
 [CreateAssetMenu(menuName = "Scriptable Objects/Tableware")]
-public class TablewareSO : ScriptableObject
-{
+public class TablewareSO : ScriptableObject {
     public GameObject prefab;
     public GameObject ghostPrefab;
     public Sprite selectorIcon;
@@ -13,4 +12,6 @@ public class TablewareSO : ScriptableObject
     public Vector3 idleLocalOrientation;
     public Vector3 holdLocalPosition;
     public Vector3 holdLocalRotation;
+    public int initAmmo;
+    public int ammo;
 }

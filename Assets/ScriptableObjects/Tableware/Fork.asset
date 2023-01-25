@@ -19,3 +19,5 @@ MonoBehaviour:
   idleLocalOrientation: {x: 312.31622, y: 310.00235, z: 52.607567}
   holdLocalPosition: {x: -0.367, y: -0.623, z: 0.512}
   holdLocalRotation: {x: 351.52185, y: 315.31232, z: 35.603813}
+  initAmmo: 999
+  ammo: 0

@@ -89,6 +89,9 @@ public class GameManager : MonoBehaviour {
         nbCompletedTables.value = 0;
 
         availableTablewares.cursor = 0;
+        foreach (TablewareSO t in availableTablewares.list) {
+            t.ammo = t.initAmmo;
+        }
 
         //Reset player transform
         playerCurrentPosition.value = playerInitPosition.value;

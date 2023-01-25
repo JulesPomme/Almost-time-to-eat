@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Scriptable Objects/ArmStateDescription")]
-public class ArmStateHandler : ScriptableObject {
+public class ArmStateHandlerSO : ScriptableObject {
 
     public ArmStateSO idleState;
     public ArmStateSO holdState;

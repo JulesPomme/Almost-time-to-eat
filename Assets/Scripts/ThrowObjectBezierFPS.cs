@@ -8,11 +8,12 @@ public class ThrowObjectBezierFPS : MonoBehaviour {
     public TablewareInstanceListSO instantiatedTablewares;
     public AudioSource woosh;
     public float throwingDuration = 1f;
-    public bool showTarget = true;
-    public GameObject targetPrefab;
     public ScriptableObjectListSO tableList;
     public ScriptableObjectListSO availableTablewares;
     public TablewareInstanceSO tablewareInHand;
+    public bool showTarget = true;
+    public GameObject targetPrefab;
+    public BooleanSO isTablewareThrowable;
 
     private GameObject target;
 
@@ -33,7 +34,8 @@ public class ThrowObjectBezierFPS : MonoBehaviour {
         Ray ray = Camera.main.ViewportPointToRay(new Vector2(0.5f, 0.5f));
         RaycastHit hit;
         //If the player is pointing something...
-        if (Physics.Raycast(ray, out hit)) {
+        isTablewareThrowable.value = Physics.Raycast(ray, out hit);
+        if (isTablewareThrowable.value) {
             //...compute and show the target point if required...
             target.transform.forward = hit.normal;
             //put the target on the hit point + a small amount above, in order to always keep it visible.
