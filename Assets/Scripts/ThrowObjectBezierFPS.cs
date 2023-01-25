@@ -7,7 +7,6 @@ public class ThrowObjectBezierFPS : MonoBehaviour {
     public FloatSO throwingForceMax;
     public TablewareInstanceListSO instantiatedTablewares;
     public AudioSource woosh;
-    public Vector3SO throwingDirection;
     public float throwingDuration = 1f;
     public bool showTarget = true;
     public GameObject targetPrefab;
@@ -42,15 +41,20 @@ public class ThrowObjectBezierFPS : MonoBehaviour {
 
             if (Input.GetMouseButtonUp(0)) {//...and throw an object at mouse releasing...
                 GameObject tw = tablewareInHand.obj;
-                tw.transform.position = throwingPoint.value; //TODO quand on lance les couverts un peu trop frénétiquement, le tablewareInHand peut parfois être null au moment où on arrive ici.
+                tw.transform.position = throwingPoint.value; //FIXME quand on lance les couverts un peu trop frénétiquement, le tablewareInHand peut parfois être null au moment où on arrive ici.
                 TableStruct? tableStruct = GetTableUnder(target);
-                if (tableStruct.HasValue) {
-                    //Rotate the tableware towards the anchor if exists
+                bool applyDefaultRotation = true;
+                if (tableStruct.HasValue) {//if object is thrown on a table
                     Vector3? anchor = GetAnchorWithNearestCompass(tableStruct.Value, target);
-                    if (anchor != null) {
+                    if (anchor != null) {//if the anchor exists, rotate the tableware towards it
                         Quaternion rotationToAnchor = Quaternion.LookRotation(anchor.Value - target.transform.position, Vector3.up);
                         tw.transform.rotation = rotationToAnchor;
+                        applyDefaultRotation = false;
                     }
+                }
+                if (applyDefaultRotation) {
+                    Quaternion defaultRotation = Quaternion.LookRotation(Camera.main.transform.forward, Camera.main.transform.up);//Quick and dirty...
+                    tw.transform.rotation = defaultRotation;
                 }
                 tw.transform.parent = transform.parent;
 
