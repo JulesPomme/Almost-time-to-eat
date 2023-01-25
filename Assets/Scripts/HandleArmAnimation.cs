@@ -63,7 +63,7 @@ public class HandleArmAnimation : MonoBehaviour {
     /// Called by the hold animation as soon as it is started.
     /// </summary>
     public void HoldAnimationIsStarted() {
-        tablewareInHand.obj.transform.localPosition = tablewareInHand.reference.holdLocalPosition;
+        tablewareInHand.obj.transform.localPosition = tablewareInHand.reference.holdLocalPosition; //TODO Warning, this line sometimes triggers a NullReferenceException
         tablewareInHand.obj.transform.localEulerAngles = tablewareInHand.reference.holdLocalRotation;
     }
 }
