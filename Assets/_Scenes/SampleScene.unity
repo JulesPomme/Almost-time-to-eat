@@ -7060,7 +7060,7 @@ MonoBehaviour:
   tablewareInHand: {fileID: 11400000, guid: fdab20a442dc1c54f98e29353a9a7dc2, type: 2}
   showTarget: 1
   targetPrefab: {fileID: 624645902745478437, guid: dd5dbf0134ae93e419519cbb8ae516dc, type: 3}
-  isTablewareThrowable: {fileID: 0}
+  isTablewareThrowable: {fileID: 11400000, guid: ced03bd0b65c3484aa9d724bf0bbd344, type: 2}
 --- !u!114 &2118030591
 MonoBehaviour:
   m_ObjectHideFlags: 0
