@@ -100,7 +100,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: f66ab221c77d7cb46902ab5f2eb32771, type: 2}
+  m_Motion: {fileID: 7400000, guid: 1d852f8a75a46994ebcdd27ad93d8d8d, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -128,7 +128,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: ba74298ff7778144a8ddf7384ccd5b66, type: 2}
+  m_Motion: {fileID: 7400000, guid: 9cc35b4e54d0b5b4eb03fec8f46c9092, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -190,7 +190,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ArmAnimatorController
+  m_Name: ArmAnimatorControllerV2
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: throw
@@ -267,7 +267,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: f258d294799821146bf056aeee5c3caa, type: 2}
+  m_Motion: {fileID: 7400000, guid: 69e4ccc3dfc9485419d721d49fc7885a, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
