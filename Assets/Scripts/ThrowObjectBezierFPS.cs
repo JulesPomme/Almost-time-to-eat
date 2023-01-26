@@ -13,7 +13,7 @@ public class ThrowObjectBezierFPS : MonoBehaviour {
     public TablewareInstanceSO tablewareInHand;
     public bool showTarget = true;
     public GameObject targetPrefab;
-    public BooleanSO isTablewareThrowable;
+    public BooleanSO canThrow;
 
     private GameObject target;
 
@@ -33,9 +33,9 @@ public class ThrowObjectBezierFPS : MonoBehaviour {
         //Get the direction of the object to throw by looking at what the crosshair is pointing
         Ray ray = Camera.main.ViewportPointToRay(new Vector2(0.5f, 0.5f));
         RaycastHit hit;
-        //If the player is pointing something...
-        isTablewareThrowable.value = Physics.Raycast(ray, out hit);
-        if (isTablewareThrowable.value) {
+        //If the player is pointing something and ammo are available...
+        canThrow.yes = Physics.Raycast(ray, out hit) && tablewareInHand.reference.ammo > 0;
+        if (canThrow.yes) {
             //...compute and show the target point if required...
             target.transform.forward = hit.normal;
             //put the target on the hit point + a small amount above, in order to always keep it visible.
@@ -70,6 +70,8 @@ public class ThrowObjectBezierFPS : MonoBehaviour {
                 woosh.pitch = Random.Range(0.8f, 1.2f);
                 woosh.Play();
 
+                //Decrease ammo
+                tablewareInHand.reference.ammo--;
                 //Remove this tableware from the player's hand.
                 tablewareInHand.obj = null;
             }

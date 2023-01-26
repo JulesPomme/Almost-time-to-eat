@@ -20,4 +20,4 @@ MonoBehaviour:
   holdLocalPosition: {x: -0.631, y: -0.456, z: -0.262}
   holdLocalRotation: {x: -36.11, y: 0, z: 0}
   initAmmo: 999
-  ammo: 0
+  ammo: 10

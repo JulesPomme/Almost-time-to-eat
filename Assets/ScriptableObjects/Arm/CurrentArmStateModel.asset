@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5283c62dda339bb4380e90686e38c67d, type: 3}
-  m_Name: CurrentArmState
+  m_Name: CurrentArmStateModel
   m_EditorClassIdentifier: 
   currentArmState: {fileID: 0}
   idleState: {fileID: 11400000, guid: 8626c730817aaef4aaad8b69044eead0, type: 2}
