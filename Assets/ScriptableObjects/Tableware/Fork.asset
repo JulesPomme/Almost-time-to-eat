@@ -15,9 +15,9 @@ MonoBehaviour:
   prefab: {fileID: 750007507486478391, guid: 95967ca0d5cca9f4fb6c4fca12477c7e, type: 3}
   ghostPrefab: {fileID: 750007507486478391, guid: 5e20b9b6105ada442adb4973cf74a461, type: 3}
   selectorIcon: {fileID: 21300000, guid: 1c95f0502beb9cd4e9703ce5ca28df0d, type: 3}
-  idleLocalPosition: {x: -0.212, y: -0.373, z: 0.649}
-  idleLocalOrientation: {x: 312.31622, y: 310.00235, z: 52.607567}
-  holdLocalPosition: {x: -0.367, y: -0.623, z: 0.512}
-  holdLocalRotation: {x: 351.52185, y: 315.31232, z: 35.603813}
+  idleLocalPosition: {x: 0.98, y: -0.747, z: 1.592}
+  idleLocalOrientation: {x: -72.512, y: -12.788, z: 41.331}
+  holdLocalPosition: {x: 0.73, y: -0.818, z: 1.716}
+  holdLocalRotation: {x: -58.109, y: -38.254, z: 64.715}
   initAmmo: 999
-  ammo: 0
+  ammo: 941
