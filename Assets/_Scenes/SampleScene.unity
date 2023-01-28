@@ -7088,6 +7088,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentModel: {fileID: 11400000, guid: 43e982f845100ce46a27d45adbe9cd82, type: 2}
   canThrow: {fileID: 11400000, guid: ced03bd0b65c3484aa9d724bf0bbd344, type: 2}
+  availableTablewares: {fileID: 11400000, guid: c6f2e875c6fe0444aa4483a1e8973d79, type: 2}
 --- !u!1 &2124193989
 GameObject:
   m_ObjectHideFlags: 0

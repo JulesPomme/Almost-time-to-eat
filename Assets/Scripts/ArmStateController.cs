@@ -6,11 +6,14 @@ public class ArmStateController : MonoBehaviour {
 
     public ArmStateModelSO currentModel;
     public BooleanSO canThrow;
+    public ScriptableObjectListSO availableTablewares;
 
+    private int lastCursor;
 
     private void Start() {
         currentModel.TellControllerIsStarted();
         currentModel.SetToIdle();
+        lastCursor = -1;
     }
 
     void Update() {
@@ -25,8 +28,12 @@ public class ArmStateController : MonoBehaviour {
             }
         }
 
-        if (canThrow.no || (currentModel.IsThrow() && !currentModel.IsThrowAnimationOn())) {
+        bool throwHasFinished = currentModel.IsThrow() && !currentModel.IsThrowAnimationOn();
+        bool changingWeapon = currentModel.IsThrow() && availableTablewares.cursor != lastCursor;
+        if (canThrow.no || throwHasFinished || changingWeapon) {
             currentModel.SetToIdle();
         }
+
+        lastCursor = availableTablewares.cursor;
     }
 }
