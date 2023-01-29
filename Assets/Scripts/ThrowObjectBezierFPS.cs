@@ -11,7 +11,6 @@ public class ThrowObjectBezierFPS : MonoBehaviour {
     public ScriptableObjectListSO tableList;
     public ScriptableObjectListSO availableTablewares;
     public TablewareInstanceSO tablewareInHand;
-    public bool showTarget = true;
     public GameObject targetPrefab;
     public BooleanSO canThrow;
 
@@ -25,17 +24,16 @@ public class ThrowObjectBezierFPS : MonoBehaviour {
     void Start() {
         target = Instantiate<GameObject>(targetPrefab);
         target.transform.parent = transform;
-        target.SetActive(showTarget);
     }
 
     void Update() {
-        target.SetActive(showTarget);
         //Get the direction of the object to throw by looking at what the crosshair is pointing
         Ray ray = Camera.main.ViewportPointToRay(new Vector2(0.5f, 0.5f));
         RaycastHit hit;
         //If the player is pointing something and ammo are available...
         canThrow.yes = Physics.Raycast(ray, out hit) && tablewareInHand.reference.ammo > 0;
         if (canThrow.yes) {
+            target.SetActive(true);
             //...compute and show the target point if required...
             target.transform.forward = hit.normal;
             //put the target on the hit point + a small amount above, in order to always keep it visible.
