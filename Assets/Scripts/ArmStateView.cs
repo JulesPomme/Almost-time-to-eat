@@ -23,7 +23,6 @@ public class ArmStateView : MonoBehaviour {
 
     void Update() {
 
-        currentModel.PrintCurrentState();
         if (!currentModel.IsControllerStarted())
             return;
         if (currentModel.StateHasChanged()) {
@@ -49,9 +48,7 @@ public class ArmStateView : MonoBehaviour {
 
     private void HandleTablewareInHand() {
         if (tablewareInHand.obj == null) {
-            Debug.Log("Creating new tableware...");
             CreateTablewareInHand();
-            Debug.Log("Created " + tablewareInHand.obj);
         } else if (availableTablewares.cursor != lastCursor) {
             Destroy(tablewareInHand.obj);
             tablewareInHand.reference = null;
