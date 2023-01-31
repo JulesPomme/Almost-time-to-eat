@@ -23,10 +23,9 @@ public class ArmStateView : MonoBehaviour {
 
     void Update() {
 
-
+        currentModel.PrintCurrentState();
         if (!currentModel.IsControllerStarted())
             return;
-        Debug.Log(animator.GetCurrentAnimatorStateInfo(animator.GetLayerIndex("Base Layer")).shortNameHash);
         if (currentModel.StateHasChanged()) {
             if (currentModel.IsIdle()) {
                 animator.ResetTrigger("hold");
@@ -44,24 +43,26 @@ public class ArmStateView : MonoBehaviour {
         }
 
         if (currentModel.IsIdle() || currentModel.IsHold()) {
-            HandleTablewareCreation();
+            HandleTablewareInHand();
         }
     }
 
-    private void HandleTablewareCreation() {
+    private void HandleTablewareInHand() {
         if (tablewareInHand.obj == null) {
+            Debug.Log("Creating new tableware...");
             CreateTablewareInHand();
+            Debug.Log("Created " + tablewareInHand.obj);
         } else if (availableTablewares.cursor != lastCursor) {
             Destroy(tablewareInHand.obj);
             tablewareInHand.reference = null;
             CreateTablewareInHand();
             lastCursor = availableTablewares.cursor;
         } else if (currentModel.StateHasChanged()) {
-            UpdateTablewareTransform();
+            UpdateTablewareInHandTransform();
         }
     }
 
-    private void UpdateTablewareTransform() {
+    private void UpdateTablewareInHandTransform() {
         TablewareSO tableware = ((TablewareSO)availableTablewares.list[availableTablewares.cursor]);
         if (currentModel.IsIdle()) {
             tablewareInHand.obj.transform.localPosition = tableware.idleLocalPosition;
@@ -79,7 +80,7 @@ public class ArmStateView : MonoBehaviour {
             clone.transform.parent = transform;
             Utils.EnablePhysics(clone, false);
             tablewareInHand.obj = clone;
-            UpdateTablewareTransform();
+            UpdateTablewareInHandTransform();
         }
         tablewareInHand.reference = (TablewareSO)availableTablewares.list[availableTablewares.cursor];
     }

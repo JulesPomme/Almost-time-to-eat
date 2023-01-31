@@ -39,9 +39,9 @@ public class ThrowObjectBezierFPS : MonoBehaviour {
             //put the target on the hit point + a small amount above, in order to always keep it visible.
             target.transform.position = new Vector3(hit.point.x, hit.point.y, hit.point.z) + (target.transform.forward / 10f);
 
-            if (Input.GetMouseButtonUp(0)) {//...and throw an object at mouse releasing...
+            if (Input.GetMouseButtonUp(0) && tablewareInHand.obj != null) {//...and throw an object at mouse releasing...
                 GameObject tw = tablewareInHand.obj;
-                tw.transform.position = throwingPoint.value; //FIXME quand on lance les couverts un peu trop frénétiquement, le tablewareInHand peut parfois être null au moment où on arrive ici.
+                tw.transform.position = throwingPoint.value;
                 TableStruct? tableStruct = GetTableUnder(target);
                 bool applyDefaultRotation = true;
                 if (tableStruct.HasValue) {//if object is thrown on a table
@@ -72,6 +72,7 @@ public class ThrowObjectBezierFPS : MonoBehaviour {
                 tablewareInHand.reference.ammo--;
                 //Remove this tableware from the player's hand.
                 tablewareInHand.obj = null;
+                Debug.Log("Tableware in hand set to null after throwing");
             }
         } else { //If the player is pointing nothing, hide the target
             target.SetActive(false);
