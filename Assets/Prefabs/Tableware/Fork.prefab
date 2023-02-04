@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 750007507486478410}
   - component: {fileID: 750007507486478389}
   - component: {fileID: 8755591569813243794}
+  - component: {fileID: 6575346362514109062}
   m_Layer: 0
   m_Name: Fork
   m_TagString: Tableware
@@ -102,6 +103,31 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &6575346362514109062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 750007507486478391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36dae92ed3d7dec41b048ac638e5ab2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  autoDestroyPlayerPrefab: {fileID: 2535032496034943566, guid: 97b2834e223a1b04ab2ca7ee269dc728, type: 3}
+  fallClips:
+  - {fileID: 8300000, guid: c36e5a20c97d67740b56f25adad25152, type: 3}
+  - {fileID: 8300000, guid: ab68df15f7b81d449882286e7b16ee41, type: 3}
+  - {fileID: 8300000, guid: 95a05abfb575fd04ca6429950e91a0cb, type: 3}
+  - {fileID: 8300000, guid: c0420a6e9741bc14f84a672b5c1d42e0, type: 3}
+  - {fileID: 8300000, guid: 5683ba924413a4947a60749a8ea862ed, type: 3}
+  - {fileID: 8300000, guid: 1f6925de9ef6be146926c2bd8d107359, type: 3}
+  - {fileID: 8300000, guid: 97afcbd8c216972458c33a37489157a7, type: 3}
+  - {fileID: 8300000, guid: a18f3d63b6cd59541a6db84df0148b1b, type: 3}
+  - {fileID: 8300000, guid: 4be522efd0c175246929b0c5cf0399a9, type: 3}
+  - {fileID: 8300000, guid: 6ef0a792fe7b27042a3d4d51d94e5189, type: 3}
+  - {fileID: 8300000, guid: 6fb8243025ef3e2458407a6cd4440241, type: 3}
 --- !u!1 &750007508315579875
 GameObject:
   m_ObjectHideFlags: 0

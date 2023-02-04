@@ -9,7 +9,6 @@ public class GameManager : MonoBehaviour {
     public IntegerSO timerTotalTime;
     public FloatSO currentTime;
     public IntegerSO score;
-    public ScriptableObjectListSO tableList;
     public IntegerSO brokenCount;
     public IntegerSO nbCompletedTables;
 
@@ -26,7 +25,6 @@ public class GameManager : MonoBehaviour {
     public AudioSource haveMadeChoiceAudio;
     public AudioSource haveYouFinished;
     public AudioSourceSO inGameVoices;
-    public AudioSourceSO breakDishesAudio;
 
     public ObservationSO resetObservation;
 
@@ -103,7 +101,6 @@ public class GameManager : MonoBehaviour {
 
     private void GameOver() {
         inGameVoices.source.Stop();
-        breakDishesAudio.source.Stop();
         haveYouFinished.Play();
         isMenu = true;
         gameContainer.SetActive(false);

@@ -9,8 +9,8 @@ public class BreakObject : MonoBehaviour
     public IntegerSO brokenCount;
     public AudioSourceSO inGameVoices;
     public AudioClip[] breakVoiceClips;
-    public AudioSourceSO breakDishesAudio;
     public AudioClip[] breakDishesClips;
+    public GameObject autoDestroyPlayerPrefab;
 
     private bool alreadyCollided;
 
@@ -36,11 +36,13 @@ public class BreakObject : MonoBehaviour
                 inGameVoices.source.pitch = Random.Range(0.95f, 1.1f);
                 inGameVoices.source.Play();
             }
-            if (!breakDishesAudio.source.isPlaying) {
-                breakDishesAudio.source.clip = breakDishesClips[Random.Range(0, breakDishesClips.Length)];
-                breakDishesAudio.source.pitch = Random.Range(0.8f, 1.2f);
-                breakDishesAudio.source.Play();
-            }
+            GameObject clone = Instantiate<GameObject>(autoDestroyPlayerPrefab, brokenClone.transform.position, Quaternion.identity);
+            clone.transform.parent = brokenClone.transform;
+            AudioSource audioSource = clone.GetComponent<AudioSource>();
+            audioSource.clip = breakDishesClips[Random.Range(0, breakDishesClips.Length)];
+            audioSource.pitch = Random.Range(0.8f, 1.2f);
+            audioSource.volume = 0.3f;
+            audioSource.Play();
             Destroy(gameObject);
             alreadyCollided = true;
         }

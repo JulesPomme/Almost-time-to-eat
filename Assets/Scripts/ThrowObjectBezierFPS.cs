@@ -72,7 +72,6 @@ public class ThrowObjectBezierFPS : MonoBehaviour {
                 tablewareInHand.reference.ammo--;
                 //Remove this tableware from the player's hand.
                 tablewareInHand.obj = null;
-                Debug.Log("Tableware in hand set to null after throwing");
             }
         } else { //If the player is pointing nothing, hide the target
             target.SetActive(false);

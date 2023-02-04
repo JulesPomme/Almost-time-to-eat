@@ -270,6 +270,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 781ba7d9d52a651458bd2e672c1c78ae, type: 3}
   - {fileID: 8300000, guid: bf38e4826bbf5474b900555e51676305, type: 3}
   - {fileID: 8300000, guid: 5cb4d2ba5d73d9446a502dd083532bac, type: 3}
+  autoDestroyPlayerPrefab: {fileID: 2535032496034943566, guid: 97b2834e223a1b04ab2ca7ee269dc728, type: 3}
 --- !u!1001 &6821479164585218799
 PrefabInstance:
   m_ObjectHideFlags: 0
