@@ -7,7 +7,7 @@ public class HandleSilverwareAudio : MonoBehaviour {
     public AudioClip[] fallClips;
 
     private void OnCollisionEnter(Collision collision) {
-        if (collision.GetContact(0).normal == Vector3.up) {
+        if (collision.gameObject.tag == "Breaker" && collision.GetContact(0).normal == Vector3.up) {
             GameObject clone = Instantiate<GameObject>(autoDestroyPlayerPrefab, gameObject.transform.position, Quaternion.identity);
             clone.transform.parent = gameObject.transform;
             AudioSource audioSource = clone.GetComponent<AudioSource>();
