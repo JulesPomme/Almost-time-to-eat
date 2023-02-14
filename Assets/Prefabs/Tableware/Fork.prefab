@@ -120,17 +120,18 @@ MonoBehaviour:
   - surfaces:
     - {fileID: 11400000, guid: 9d8c51f482742a342bdc6c7d6934cb55, type: 2}
     clips:
-    - {fileID: 8300000, guid: c36e5a20c97d67740b56f25adad25152, type: 3}
-    - {fileID: 8300000, guid: ab68df15f7b81d449882286e7b16ee41, type: 3}
-    - {fileID: 8300000, guid: 95a05abfb575fd04ca6429950e91a0cb, type: 3}
-    - {fileID: 8300000, guid: c0420a6e9741bc14f84a672b5c1d42e0, type: 3}
-    - {fileID: 8300000, guid: 5683ba924413a4947a60749a8ea862ed, type: 3}
-    - {fileID: 8300000, guid: 1f6925de9ef6be146926c2bd8d107359, type: 3}
-    - {fileID: 8300000, guid: 97afcbd8c216972458c33a37489157a7, type: 3}
-    - {fileID: 8300000, guid: a18f3d63b6cd59541a6db84df0148b1b, type: 3}
-    - {fileID: 8300000, guid: 4be522efd0c175246929b0c5cf0399a9, type: 3}
-    - {fileID: 8300000, guid: 6ef0a792fe7b27042a3d4d51d94e5189, type: 3}
-    - {fileID: 8300000, guid: 6fb8243025ef3e2458407a6cd4440241, type: 3}
+    - {fileID: 8300000, guid: 23cc6661b17498a49ad1e18df3fd6f59, type: 3}
+    - {fileID: 8300000, guid: 1cc4fdd8d3c3a0d468fa6d55d5729989, type: 3}
+    - {fileID: 8300000, guid: 26e39f43b88316044beb4edf36e418d6, type: 3}
+    - {fileID: 8300000, guid: 339c7f190617b61479533a9b32106b1b, type: 3}
+    - {fileID: 8300000, guid: a57d30d567dc38740b70877a87452480, type: 3}
+    - {fileID: 8300000, guid: c8e67a69f25495b4e8b77fa03b2ef56a, type: 3}
+    - {fileID: 8300000, guid: ffffdf2ad552a674ab5c68834d4b8642, type: 3}
+    - {fileID: 8300000, guid: ff234bad523889f44aae9fb7442f038b, type: 3}
+    - {fileID: 8300000, guid: bacfa84a218b2bc4f84afa991543a5a7, type: 3}
+    - {fileID: 8300000, guid: 260ec5a9d7456d74b9219571d6b21c89, type: 3}
+    - {fileID: 8300000, guid: 2d0b6ba51efe532468f7eccc0ce80159, type: 3}
+    - {fileID: 8300000, guid: 0e48825d894788b46a4325cc4c8ef41d, type: 3}
 --- !u!1 &750007508315579875
 GameObject:
   m_ObjectHideFlags: 0
