@@ -116,18 +116,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   autoDestroyPlayerPrefab: {fileID: 2535032496034943566, guid: 97b2834e223a1b04ab2ca7ee269dc728, type: 3}
-  fallClips:
-  - {fileID: 8300000, guid: c36e5a20c97d67740b56f25adad25152, type: 3}
-  - {fileID: 8300000, guid: ab68df15f7b81d449882286e7b16ee41, type: 3}
-  - {fileID: 8300000, guid: 95a05abfb575fd04ca6429950e91a0cb, type: 3}
-  - {fileID: 8300000, guid: c0420a6e9741bc14f84a672b5c1d42e0, type: 3}
-  - {fileID: 8300000, guid: 5683ba924413a4947a60749a8ea862ed, type: 3}
-  - {fileID: 8300000, guid: 1f6925de9ef6be146926c2bd8d107359, type: 3}
-  - {fileID: 8300000, guid: 97afcbd8c216972458c33a37489157a7, type: 3}
-  - {fileID: 8300000, guid: a18f3d63b6cd59541a6db84df0148b1b, type: 3}
-  - {fileID: 8300000, guid: 4be522efd0c175246929b0c5cf0399a9, type: 3}
-  - {fileID: 8300000, guid: 6ef0a792fe7b27042a3d4d51d94e5189, type: 3}
-  - {fileID: 8300000, guid: 6fb8243025ef3e2458407a6cd4440241, type: 3}
+  surfaceToAudiosMap:
+  - surfaces:
+    - {fileID: 11400000, guid: 9d8c51f482742a342bdc6c7d6934cb55, type: 2}
+    clips:
+    - {fileID: 8300000, guid: c36e5a20c97d67740b56f25adad25152, type: 3}
+    - {fileID: 8300000, guid: ab68df15f7b81d449882286e7b16ee41, type: 3}
+    - {fileID: 8300000, guid: 95a05abfb575fd04ca6429950e91a0cb, type: 3}
+    - {fileID: 8300000, guid: c0420a6e9741bc14f84a672b5c1d42e0, type: 3}
+    - {fileID: 8300000, guid: 5683ba924413a4947a60749a8ea862ed, type: 3}
+    - {fileID: 8300000, guid: 1f6925de9ef6be146926c2bd8d107359, type: 3}
+    - {fileID: 8300000, guid: 97afcbd8c216972458c33a37489157a7, type: 3}
+    - {fileID: 8300000, guid: a18f3d63b6cd59541a6db84df0148b1b, type: 3}
+    - {fileID: 8300000, guid: 4be522efd0c175246929b0c5cf0399a9, type: 3}
+    - {fileID: 8300000, guid: 6ef0a792fe7b27042a3d4d51d94e5189, type: 3}
+    - {fileID: 8300000, guid: 6fb8243025ef3e2458407a6cd4440241, type: 3}
 --- !u!1 &750007508315579875
 GameObject:
   m_ObjectHideFlags: 0
