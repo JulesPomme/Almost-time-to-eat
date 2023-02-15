@@ -8,6 +8,7 @@ public class HandleCollisionAudio : MonoBehaviour {
     public struct SurfaceToAudioMap {
         public SurfaceSO[] surfaces;
         public AudioClip[] clips;
+        public float volume;
     }
 
     public GameObject autoDestroyPlayerPrefab;
@@ -21,6 +22,7 @@ public class HandleCollisionAudio : MonoBehaviour {
         if (surface != null && surfaceToAudiosMap != null) {
             //...do we have a bunch of sounds for this surface?...
             AudioClip[] clips = null;
+            float volume = 1f;
             bool found = false;
             int i = 0;
             while (!found && i < surfaceToAudiosMap.Length) {
@@ -28,6 +30,7 @@ public class HandleCollisionAudio : MonoBehaviour {
                 while (!found && j < surfaceToAudiosMap[i].surfaces.Length) {
                     if (surfaceToAudiosMap[i].surfaces[j] == surface.surfaceSO) {
                         clips = surfaceToAudiosMap[i].clips;
+                        volume = surfaceToAudiosMap[i].volume;
                         found = true;
                     }
                     j++;
@@ -41,7 +44,7 @@ public class HandleCollisionAudio : MonoBehaviour {
                 AudioSource audioSource = clone.GetComponent<AudioSource>();
                 audioSource.clip = clips[Random.Range(0, clips.Length)];
                 audioSource.pitch = Random.Range(0.8f, 1.2f);
-                audioSource.volume = 1f;
+                audioSource.volume = volume;
                 audioSource.Play();
             }
         }
