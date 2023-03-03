@@ -306,7 +306,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 768a48cb8e3be4546ba6d4267ea69aa1, type: 3}
   - {fileID: 8300000, guid: 4c238bc9f5b295342ac5097373cde093, type: 3}
   - {fileID: 8300000, guid: b6ac547f51ba86f4488a3b2087574461, type: 3}
-  breakDishesAudio: {fileID: 11400000, guid: c89bf985b098a794184a5736fc4ee35b, type: 2}
   breakDishesClips:
   - {fileID: 8300000, guid: 51ad2c0e42f80e541af731e291a5a0c1, type: 3}
   - {fileID: 8300000, guid: 4a1c3874e275d564082740b6cdbfde8d, type: 3}
@@ -314,6 +313,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: bf38e4826bbf5474b900555e51676305, type: 3}
   - {fileID: 8300000, guid: 5cb4d2ba5d73d9446a502dd083532bac, type: 3}
   autoDestroyPlayerPrefab: {fileID: 2535032496034943566, guid: 97b2834e223a1b04ab2ca7ee269dc728, type: 3}
+  cameraShakeDuration: {fileID: 11400000, guid: da5cd634bedbf944a8fce17024a9fd5e, type: 2}
 --- !u!114 &6735000288948222938
 MonoBehaviour:
   m_ObjectHideFlags: 0

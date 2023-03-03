@@ -11,6 +11,7 @@ public class BreakObject : MonoBehaviour
     public AudioClip[] breakVoiceClips;
     public AudioClip[] breakDishesClips;
     public GameObject autoDestroyPlayerPrefab;
+    public FloatSO cameraShakeDuration;
 
     private bool alreadyCollided;
 
@@ -43,6 +44,7 @@ public class BreakObject : MonoBehaviour
             audioSource.pitch = Random.Range(0.8f, 1.2f);
             audioSource.volume = 0.3f;
             audioSource.Play();
+            cameraShakeDuration.value = 0.1f;
             Destroy(gameObject);
             alreadyCollided = true;
         }
