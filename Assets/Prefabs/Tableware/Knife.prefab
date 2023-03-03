@@ -158,6 +158,15 @@ MonoBehaviour:
     - {fileID: 8300000, guid: e00877978114e0a4299f0dbb1969a9d6, type: 3}
     - {fileID: 8300000, guid: efa61977b565704479eb7e2230ffb86c, type: 3}
     volume: 0.3
+  - surfaces:
+    - {fileID: 11400000, guid: cc0aa10fae3a84e4f937e4716d2255e7, type: 2}
+    clips:
+    - {fileID: 8300000, guid: a5014bed51f45864daf95159fe3b3914, type: 3}
+    - {fileID: 8300000, guid: a3af961317113a943ad438a69cb79d3c, type: 3}
+    - {fileID: 8300000, guid: 362eefa4d18287a4cb34691d71dad90a, type: 3}
+    - {fileID: 8300000, guid: 5e711e967c4c27349aa063c86bf7f939, type: 3}
+    - {fileID: 8300000, guid: ad5465f0960083547b2ec8e0ebdb5a95, type: 3}
+    volume: 0.5
 --- !u!1 &750007508315579875
 GameObject:
   m_ObjectHideFlags: 0
