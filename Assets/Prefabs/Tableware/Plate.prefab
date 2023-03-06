@@ -151,6 +151,7 @@ GameObject:
   - component: {fileID: 6809124475963871211}
   - component: {fileID: 6809124475963871212}
   - component: {fileID: 5801935250843782141}
+  - component: {fileID: 3296161359255722492}
   m_Layer: 0
   m_Name: Plate
   m_TagString: Tableware
@@ -271,6 +272,28 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 5cb4d2ba5d73d9446a502dd083532bac, type: 3}
   autoDestroyPlayerPrefab: {fileID: 2535032496034943566, guid: 97b2834e223a1b04ab2ca7ee269dc728, type: 3}
   cameraShakeDuration: {fileID: 11400000, guid: da5cd634bedbf944a8fce17024a9fd5e, type: 2}
+--- !u!114 &3296161359255722492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6809124475963871209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36dae92ed3d7dec41b048ac638e5ab2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 1
+  autoDestroyPlayerPrefab: {fileID: 2535032496034943566, guid: 97b2834e223a1b04ab2ca7ee269dc728, type: 3}
+  surfaceToAudiosMap:
+  - surfaces:
+    - {fileID: 11400000, guid: d7909a3272787864f8a02d025a141c21, type: 2}
+    clips:
+    - {fileID: 8300000, guid: 48034fa2f891ece499122ce4092b56ac, type: 3}
+    - {fileID: 8300000, guid: 3f5490cfef96b624ba629cac03347ad2, type: 3}
+    - {fileID: 8300000, guid: e439960af9cbaf2479b90ea59219c989, type: 3}
+    volume: 0.5
 --- !u!1001 &6821479164585218799
 PrefabInstance:
   m_ObjectHideFlags: 0
