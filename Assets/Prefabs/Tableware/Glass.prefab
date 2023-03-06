@@ -243,6 +243,7 @@ GameObject:
   - component: {fileID: 8767987759271211933}
   - component: {fileID: 3507472594169888117}
   - component: {fileID: 6735000288948222938}
+  - component: {fileID: -5378143298216092668}
   m_Layer: 0
   m_Name: Glass
   m_TagString: Tableware
@@ -326,6 +327,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a7e556e390442f428c9117f70864892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-5378143298216092668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8382120999269282670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36dae92ed3d7dec41b048ac638e5ab2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 1
+  autoDestroyPlayerPrefab: {fileID: 2535032496034943566, guid: 97b2834e223a1b04ab2ca7ee269dc728, type: 3}
+  surfaceToAudiosMap:
+  - surfaces:
+    - {fileID: 11400000, guid: d7909a3272787864f8a02d025a141c21, type: 2}
+    clips:
+    - {fileID: 8300000, guid: ee02e19cc3cf06946b3110bff04d93cd, type: 3}
+    - {fileID: 8300000, guid: ea79769ec066d664584b55a1c80eef9b, type: 3}
+    - {fileID: 8300000, guid: a1c05f539782ad84daec6b56d32846a7, type: 3}
+    - {fileID: 8300000, guid: 34618487000c0334bb24fdb8c4c9259a, type: 3}
+    - {fileID: 8300000, guid: 6877aa78f05e10049a2661cc0bedb9e6, type: 3}
+    volume: 0.5
 --- !u!1001 &7335713594016295500
 PrefabInstance:
   m_ObjectHideFlags: 0
