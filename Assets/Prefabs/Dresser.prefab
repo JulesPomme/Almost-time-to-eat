@@ -1158,9 +1158,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4107355403337053612}
     m_Modifications:
+    - target: {fileID: 358671091278163264, guid: 354132040fcb7b84f93d7615f100e161, type: 3}
+      propertyPath: active
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 750007507486478391, guid: 354132040fcb7b84f93d7615f100e161, type: 3}
       propertyPath: m_Name
       value: Knife (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 750007507486478408, guid: 354132040fcb7b84f93d7615f100e161, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 750007507486478411, guid: 354132040fcb7b84f93d7615f100e161, type: 3}
       propertyPath: m_RootOrder
@@ -1539,9 +1547,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4107355403337053612}
     m_Modifications:
+    - target: {fileID: 358671091278163264, guid: 354132040fcb7b84f93d7615f100e161, type: 3}
+      propertyPath: active
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 750007507486478391, guid: 354132040fcb7b84f93d7615f100e161, type: 3}
       propertyPath: m_Name
       value: Knife (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 750007507486478408, guid: 354132040fcb7b84f93d7615f100e161, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 750007507486478411, guid: 354132040fcb7b84f93d7615f100e161, type: 3}
       propertyPath: m_RootOrder
@@ -1649,6 +1665,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6575346362514109062, guid: 95967ca0d5cca9f4fb6c4fca12477c7e, type: 3}
+      propertyPath: active
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95967ca0d5cca9f4fb6c4fca12477c7e, type: 3}
 --- !u!4 &1400084383904586322 stripped
@@ -1663,9 +1683,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4107355403337053612}
     m_Modifications:
+    - target: {fileID: 358671091278163264, guid: 354132040fcb7b84f93d7615f100e161, type: 3}
+      propertyPath: active
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 750007507486478391, guid: 354132040fcb7b84f93d7615f100e161, type: 3}
       propertyPath: m_Name
       value: Knife (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 750007507486478408, guid: 354132040fcb7b84f93d7615f100e161, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 750007507486478411, guid: 354132040fcb7b84f93d7615f100e161, type: 3}
       propertyPath: m_RootOrder
@@ -1809,9 +1837,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4107355403337053612}
     m_Modifications:
+    - target: {fileID: 358671091278163264, guid: 354132040fcb7b84f93d7615f100e161, type: 3}
+      propertyPath: active
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 750007507486478391, guid: 354132040fcb7b84f93d7615f100e161, type: 3}
       propertyPath: m_Name
       value: Knife (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 750007507486478408, guid: 354132040fcb7b84f93d7615f100e161, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 750007507486478411, guid: 354132040fcb7b84f93d7615f100e161, type: 3}
       propertyPath: m_RootOrder
@@ -2238,6 +2274,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6575346362514109062, guid: 95967ca0d5cca9f4fb6c4fca12477c7e, type: 3}
+      propertyPath: active
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95967ca0d5cca9f4fb6c4fca12477c7e, type: 3}
 --- !u!4 &2415122289891177093 stripped
@@ -2638,9 +2678,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4107355403337053612}
     m_Modifications:
+    - target: {fileID: 358671091278163264, guid: 354132040fcb7b84f93d7615f100e161, type: 3}
+      propertyPath: active
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 750007507486478391, guid: 354132040fcb7b84f93d7615f100e161, type: 3}
       propertyPath: m_Name
       value: Knife (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 750007507486478408, guid: 354132040fcb7b84f93d7615f100e161, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 750007507486478411, guid: 354132040fcb7b84f93d7615f100e161, type: 3}
       propertyPath: m_RootOrder
@@ -2746,6 +2794,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 750007507486478411, guid: 95967ca0d5cca9f4fb6c4fca12477c7e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6575346362514109062, guid: 95967ca0d5cca9f4fb6c4fca12477c7e, type: 3}
+      propertyPath: active
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2877,6 +2929,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6575346362514109062, guid: 95967ca0d5cca9f4fb6c4fca12477c7e, type: 3}
+      propertyPath: active
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95967ca0d5cca9f4fb6c4fca12477c7e, type: 3}
 --- !u!4 &5197404050692062034 stripped
@@ -2958,9 +3014,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4107355403337053612}
     m_Modifications:
+    - target: {fileID: 358671091278163264, guid: 354132040fcb7b84f93d7615f100e161, type: 3}
+      propertyPath: active
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 750007507486478391, guid: 354132040fcb7b84f93d7615f100e161, type: 3}
       propertyPath: m_Name
       value: Knife (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 750007507486478408, guid: 354132040fcb7b84f93d7615f100e161, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 750007507486478411, guid: 354132040fcb7b84f93d7615f100e161, type: 3}
       propertyPath: m_RootOrder
@@ -3020,9 +3084,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4107355403337053612}
     m_Modifications:
+    - target: {fileID: 358671091278163264, guid: 354132040fcb7b84f93d7615f100e161, type: 3}
+      propertyPath: active
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 750007507486478391, guid: 354132040fcb7b84f93d7615f100e161, type: 3}
       propertyPath: m_Name
       value: Knife (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 750007507486478408, guid: 354132040fcb7b84f93d7615f100e161, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 750007507486478411, guid: 354132040fcb7b84f93d7615f100e161, type: 3}
       propertyPath: m_RootOrder
@@ -3128,6 +3200,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 750007507486478411, guid: 95967ca0d5cca9f4fb6c4fca12477c7e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6575346362514109062, guid: 95967ca0d5cca9f4fb6c4fca12477c7e, type: 3}
+      propertyPath: active
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -3295,9 +3371,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4107355403337053612}
     m_Modifications:
+    - target: {fileID: 358671091278163264, guid: 354132040fcb7b84f93d7615f100e161, type: 3}
+      propertyPath: active
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 750007507486478391, guid: 354132040fcb7b84f93d7615f100e161, type: 3}
       propertyPath: m_Name
       value: Knife
+      objectReference: {fileID: 0}
+    - target: {fileID: 750007507486478408, guid: 354132040fcb7b84f93d7615f100e161, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 750007507486478411, guid: 354132040fcb7b84f93d7615f100e161, type: 3}
       propertyPath: m_RootOrder
@@ -3640,6 +3724,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6575346362514109062, guid: 95967ca0d5cca9f4fb6c4fca12477c7e, type: 3}
+      propertyPath: active
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95967ca0d5cca9f4fb6c4fca12477c7e, type: 3}
 --- !u!4 &7821046570601838381 stripped
@@ -3738,9 +3826,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4107355403337053612}
     m_Modifications:
+    - target: {fileID: 358671091278163264, guid: 354132040fcb7b84f93d7615f100e161, type: 3}
+      propertyPath: active
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 750007507486478391, guid: 354132040fcb7b84f93d7615f100e161, type: 3}
       propertyPath: m_Name
       value: Knife (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 750007507486478408, guid: 354132040fcb7b84f93d7615f100e161, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 750007507486478411, guid: 354132040fcb7b84f93d7615f100e161, type: 3}
       propertyPath: m_RootOrder
@@ -3846,6 +3942,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 750007507486478411, guid: 95967ca0d5cca9f4fb6c4fca12477c7e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6575346362514109062, guid: 95967ca0d5cca9f4fb6c4fca12477c7e, type: 3}
+      propertyPath: active
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -4145,6 +4245,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6575346362514109062, guid: 95967ca0d5cca9f4fb6c4fca12477c7e, type: 3}
+      propertyPath: active
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95967ca0d5cca9f4fb6c4fca12477c7e, type: 3}
 --- !u!4 &8348072651704419829 stripped
@@ -4159,9 +4263,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4107355403337053612}
     m_Modifications:
+    - target: {fileID: 358671091278163264, guid: 354132040fcb7b84f93d7615f100e161, type: 3}
+      propertyPath: active
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 750007507486478391, guid: 354132040fcb7b84f93d7615f100e161, type: 3}
       propertyPath: m_Name
       value: Knife (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 750007507486478408, guid: 354132040fcb7b84f93d7615f100e161, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 750007507486478411, guid: 354132040fcb7b84f93d7615f100e161, type: 3}
       propertyPath: m_RootOrder
@@ -4305,9 +4417,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4107355403337053612}
     m_Modifications:
+    - target: {fileID: 358671091278163264, guid: 354132040fcb7b84f93d7615f100e161, type: 3}
+      propertyPath: active
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 750007507486478391, guid: 354132040fcb7b84f93d7615f100e161, type: 3}
       propertyPath: m_Name
       value: Knife (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 750007507486478408, guid: 354132040fcb7b84f93d7615f100e161, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 750007507486478411, guid: 354132040fcb7b84f93d7615f100e161, type: 3}
       propertyPath: m_RootOrder

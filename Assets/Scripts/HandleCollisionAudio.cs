@@ -11,11 +11,13 @@ public class HandleCollisionAudio : MonoBehaviour {
         public float volume;
     }
 
+    public bool active = true;
     public GameObject autoDestroyPlayerPrefab;
     public SurfaceToAudioMap[] surfaceToAudiosMap;
-    
 
     private void OnCollisionEnter(Collision collision) {
+        if (!active)
+            return;
         //Retrieving the surface of the colliding object...
         Surface surface = collision.gameObject.GetComponent<Surface>();
         //...if the surface exists and a map is assigned...
