@@ -34,7 +34,7 @@ public class UpdateScore : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other) {
-        TablewareInstanceListSO.Container? enteringTableware = instantiatedTablewares.GetContainerWithCollider(other.gameObject);
+        TablewareInstanceListSO.Container? enteringTableware = instantiatedTablewares.FindContainerWithCollider(other);
         if (enteringTableware.HasValue && enteringTableware.Value.reference == myTableware && !alreadyEnteredObjects.Contains(other.gameObject)) {
             previousPositionDict[other.gameObject] = null;
             alreadyEnteredObjects.Add(other.gameObject);

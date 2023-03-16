@@ -27,7 +27,7 @@ public class UpdateGameOverScore : MonoBehaviour
         }
         scoreText.text = score.value.ToString();
         nbCompletedTableText.text = nbCompletedTables.value.ToString();
-        tablewareUsedText.text = instantiatedTableware.list.Count.ToString();
+        tablewareUsedText.text = instantiatedTableware.Count().ToString();
         tablewareBrokenText.text = brokenCount.value.ToString();
         remainingTimeText.text = Mathf.CeilToInt(currentTime.value).ToString();
     }

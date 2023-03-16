@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour {
     private void Start() {
         isMenu = true;
         startGameAudioStarted = false;
+        instantiatedTablewares.SetDefaultOwner(gameContainer);
     }
 
     private void Update() {
@@ -78,10 +79,7 @@ public class GameManager : MonoBehaviour {
         score.value = 0;
 
         //Clear all instantiated tablewares
-        foreach (TablewareInstanceListSO.Container container in instantiatedTablewares.list) {
-            Destroy(container.instance);
-        }
-        instantiatedTablewares.list.Clear();
+        instantiatedTablewares.Clear();
         brokenCount.value = 0;
 
         nbCompletedTables.value = 0;

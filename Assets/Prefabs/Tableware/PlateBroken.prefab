@@ -1561,6 +1561,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8200333033390095007}
+  - component: {fileID: 2963509483949408579}
   m_Layer: 0
   m_Name: PlateBroken
   m_TagString: Untagged
@@ -1598,6 +1599,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2963509483949408579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8200333033390095000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5915d4b44e575f349958e26c8dd386ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pieces:
+  - {fileID: 2364914700706742722}
+  - {fileID: 985584384686266860}
+  - {fileID: 8650706206262764129}
+  - {fileID: 8590532116313706128}
+  - {fileID: 3681901455213343965}
+  - {fileID: 1485286008077814500}
+  - {fileID: 3145860758924164042}
+  - {fileID: 2777685858825418696}
+  - {fileID: 6939165301406843111}
+  - {fileID: 3057474126119161086}
 --- !u!1 &8200333033403053759
 GameObject:
   m_ObjectHideFlags: 0

@@ -76,8 +76,9 @@ public class ThrowObjectBezier : MonoBehaviour
                 TablewareInstanceListSO.Container container = new TablewareInstanceListSO.Container();
                 container.instance = clone;
                 container.reference = currentWave.tableware;
-                container.objectsWithColliders = GetObjectsWithColliders(clone);
-                instantiatedTablewares.list.Add(container);
+                container.physicalColliders = GetObjectsWithColliders(clone);
+                instantiatedTablewares.Add(gameObject, container);
+                ;
                 ResetThrowingForce();
                 woosh.pitch = Random.Range(0.8f, 1.2f);
                 woosh.Play();
@@ -113,14 +114,14 @@ public class ThrowObjectBezier : MonoBehaviour
         return uu * p0 + 2 * u * t * p1 + tt * p2;
     }
 
-    private List<GameObject> GetObjectsWithColliders(GameObject clone) {
-        List<GameObject> res = new List<GameObject>();
+    private List<Collider> GetObjectsWithColliders(GameObject clone) {
+        List<Collider> res = new List<Collider>();
         if (clone.GetComponent<Collider>() != null && !clone.GetComponent<Collider>().isTrigger) {
-            res.Add(clone);
+            res.Add(clone.GetComponent<Collider>());
         }
         foreach (Collider collider in clone.GetComponentsInChildren<Collider>()) {
             if (!collider.isTrigger) {
-                res.Add(collider.gameObject);
+                res.Add(collider);
             }
         }
         return res;

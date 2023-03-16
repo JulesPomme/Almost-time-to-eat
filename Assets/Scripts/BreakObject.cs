@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BreakObject : MonoBehaviour
-{
+public class BreakObject : MonoBehaviour {
     public GameObject brokenPrefab;
     public TablewareInstanceListSO instantiatedTablewares;
     public IntegerSO brokenCount;
@@ -25,11 +24,16 @@ public class BreakObject : MonoBehaviour
             //Raise the broken object a little bit, otherwise it comes up with an explosion (can't really understand why...)
             brokenClone.transform.position = new Vector3(brokenClone.transform.position.x, brokenClone.transform.position.y + 0.5f, brokenClone.transform.position.z);
             brokenClone.transform.parent = transform.parent;
-            
+
+            GameObject owner = instantiatedTablewares.FindOwner(gameObject);
             instantiatedTablewares.Remove(gameObject);
-            TablewareInstanceListSO.Container container = new TablewareInstanceListSO.Container();
-            container.instance = brokenClone;
-            instantiatedTablewares.list.Add(container);
+            GameObject[] brokenPieces = brokenClone.GetComponent<BrokenTableware>().pieces;
+            foreach (GameObject piece in brokenPieces) {
+                TablewareInstanceListSO.Container container = new TablewareInstanceListSO.Container();
+                container.instance = piece;
+                container.physicalColliders = TablewareInstanceListSO.GetNestedPhysicalColliders(piece);
+                instantiatedTablewares.Add(owner, container);
+            }
 
             brokenCount.value++;
             if (!inGameVoices.source.isPlaying) {

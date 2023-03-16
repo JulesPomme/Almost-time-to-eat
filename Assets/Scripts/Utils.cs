@@ -27,4 +27,18 @@ public class Utils {
 
         return v.x * t.right + v.y * t.up + v.z * t.forward;
     }
+
+    /// <summary>
+	/// Returns the full hierarchy name of the game object.
+	/// </summary>
+	/// <param name="go">The game object.</param>
+	public static string GetFullName(GameObject go) {
+        string name = go.name;
+        while (go.transform.parent != null) {
+
+            go = go.transform.parent.gameObject;
+            name = go.name + "/" + name;
+        }
+        return name;
+    }
 }

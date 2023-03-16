@@ -3,56 +3,124 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Scriptable Objects/Tableware Instance List")]
-public class TablewareInstanceListSO : ScriptableObject
-{
+public class TablewareInstanceListSO : ScriptableObject {
     [System.Serializable]
-    public struct Container
-    {
+    public struct Container {
         public GameObject instance;
         public TablewareSO reference;
-        public List<GameObject> objectsWithColliders;
+        public List<Collider> physicalColliders;
     }
 
-    public List<Container> list;
+    private Dictionary<GameObject, List<Container>> registerPerTable = new Dictionary<GameObject, List<Container>>();
+    private GameObject defaultOwner;
+
+
+    private List<Container> RegisterAsList() {
+
+        List<Container> list = new List<Container>();
+        foreach (GameObject table in registerPerTable.Keys) {
+            list.AddRange(registerPerTable[table]);
+        }
+        return list;
+    }
+
+    public int Count() {
+        int count = 0;
+        foreach (GameObject table in registerPerTable.Keys) {
+            count += registerPerTable[table].Count;
+        }
+        return count;
+    }
+
+    public void Add(GameObject owner, Container container) {
+
+        if (!registerPerTable.ContainsKey(owner)) {
+            registerPerTable[owner] = new List<Container>();
+        }
+        registerPerTable[owner].Add(container);
+    }
+
+    public void Clear() {
+        foreach (GameObject table in registerPerTable.Keys) {
+            for (int i = 0; i < registerPerTable[table].Count; i++) {
+                Destroy(registerPerTable[table][i].instance);
+            }
+        }
+        registerPerTable.Clear();
+    }
 
     public bool Remove(GameObject instance) {
 
         bool res = false;
-        bool found = false;
         int i = 0;
-        while (!found && i < list.Count) {
-            if (list[i].instance == instance) {
-                res = list.Remove(list[i]);
-                found = true;
+        List<GameObject> keys = new List<GameObject>(registerPerTable.Keys);
+        while (!res && i < keys.Count) {
+            int j = 0;
+            while (!res && j < registerPerTable[keys[i]].Count) {
+                if (registerPerTable[keys[i]][j].instance == instance) {
+                    res = registerPerTable[keys[i]].Remove(registerPerTable[keys[i]][j]);
+                }
+                j++;
             }
             i++;
         }
         return res;
     }
-    public bool ContainsCollider(GameObject obj) {
 
-        bool found = false;
+    public Container? FindContainerWithCollider(Collider collider) {
+
+        Container? res = null;
         int i = 0;
-        while (!found && i < list.Count) {
-            if (list[i].objectsWithColliders != null && list[i].objectsWithColliders.Contains(obj)) {
-                found = true;
+        List<GameObject> keys = new List<GameObject>(registerPerTable.Keys);
+        while (!res.HasValue && i < keys.Count) {
+            int j = 0;
+            while (!res.HasValue && j < registerPerTable[keys[i]].Count) {
+                List<Collider> objectsWithColliders = registerPerTable[keys[i]][j].physicalColliders;
+                if (objectsWithColliders != null && objectsWithColliders.Contains(collider)) {
+                    res = registerPerTable[keys[i]][j];
+                }
+                j++;
             }
             i++;
         }
-        return found;
+        return res;
     }
 
-    public Container? GetContainerWithCollider(GameObject objCollider) {
+    public GameObject FindOwner(GameObject instance) {
 
-        Container? res = null;
-        bool found = false;
+        GameObject owner = null;
         int i = 0;
-        while (!found && i < list.Count) {
-            if (list[i].objectsWithColliders != null && list[i].objectsWithColliders.Contains(objCollider)) {
-                found = true;
-                res = list[i];
+        List<GameObject> keys = new List<GameObject>(registerPerTable.Keys);
+        while (owner == null && i < keys.Count) {
+            int j = 0;
+            while (owner == null && j < registerPerTable[keys[i]].Count) {
+                if (registerPerTable[keys[i]][j].instance == instance) {
+                    owner = keys[i];
+                }
+                j++;
             }
             i++;
+        }
+        return owner;
+    }
+
+    public void SetDefaultOwner(GameObject g) {
+        defaultOwner = g;
+    }
+
+    public GameObject GetDefaultOwner() {
+        return defaultOwner;
+    }
+
+    public static List<Collider> GetNestedPhysicalColliders(GameObject instance) {
+        List<Collider> res = new List<Collider>();
+        if (instance.GetComponent<Collider>() != null && !instance.GetComponent<Collider>().isTrigger) {
+            res.Add(instance.GetComponent<Collider>());
+        }
+        foreach (Collider collider in instance.GetComponentsInChildren<Collider>()) {
+            if (!collider.isTrigger) {
+                res.Add(collider);
+            }
         }
         return res;
     }

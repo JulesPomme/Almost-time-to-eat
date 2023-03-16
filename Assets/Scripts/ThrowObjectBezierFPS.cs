@@ -63,8 +63,8 @@ public class ThrowObjectBezierFPS : MonoBehaviour {
                 TablewareInstanceListSO.Container container = new TablewareInstanceListSO.Container();
                 container.instance = tw;
                 container.reference = (TablewareSO)availableTablewares.list[availableTablewares.cursor];
-                container.objectsWithColliders = GetChildrenWithColliders(tw);
-                instantiatedTablewares.list.Add(container);
+                container.physicalColliders = TablewareInstanceListSO.GetNestedPhysicalColliders(tw);
+                instantiatedTablewares.Add(instantiatedTablewares.GetDefaultOwner(), container);
                 woosh.pitch = Random.Range(0.8f, 1.2f);
                 woosh.Play();
 
@@ -165,18 +165,5 @@ public class ThrowObjectBezierFPS : MonoBehaviour {
         float uu = u * u;
 
         return uu * p0 + 2 * u * t * p1 + tt * p2;
-    }
-
-    private List<GameObject> GetChildrenWithColliders(GameObject obj) {
-        List<GameObject> res = new List<GameObject>();
-        if (obj.GetComponent<Collider>() != null && !obj.GetComponent<Collider>().isTrigger) {
-            res.Add(obj);
-        }
-        foreach (Collider collider in obj.GetComponentsInChildren<Collider>()) {
-            if (!collider.isTrigger) {
-                res.Add(collider.gameObject);
-            }
-        }
-        return res;
     }
 }
