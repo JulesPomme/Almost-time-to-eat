@@ -78,7 +78,6 @@ public class ThrowObjectBezier : MonoBehaviour
                 container.reference = currentWave.tableware;
                 container.physicalColliders = GetObjectsWithColliders(clone);
                 instantiatedTablewares.Add(gameObject, container);
-                ;
                 ResetThrowingForce();
                 woosh.pitch = Random.Range(0.8f, 1.2f);
                 woosh.Play();

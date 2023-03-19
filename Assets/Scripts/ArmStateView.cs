@@ -74,6 +74,7 @@ public class ArmStateView : MonoBehaviour {
         TablewareSO tableware = ((TablewareSO)availableTablewares.list[availableTablewares.cursor]);
         if (tableware.ammo > 0) {
             GameObject clone = Instantiate(tableware.prefab);
+            clone.name += Utils.GetUniqueId();
             clone.transform.parent = transform;
             Utils.EnablePhysics(clone, false);
             tablewareInHand.obj = clone;

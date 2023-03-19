@@ -338,6 +338,7 @@ GameObject:
   - component: {fileID: 3036797699908041355}
   - component: {fileID: 8140940788259144054}
   - component: {fileID: 7660491182176542988}
+  - component: {fileID: 974602565540170028}
   m_Layer: 0
   m_Name: RoundTable
   m_TagString: Untagged
@@ -439,6 +440,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   topSurface: {fileID: 8278296896005828040}
   table: {fileID: 0}
+  tablewareRegister: {fileID: 11400000, guid: f7363cdaef43ea148b5e7726aec3db22, type: 2}
   resetObservation: {fileID: 11400000, guid: 236bb24bfe45dc54aae525a142f5e637, type: 2}
   alertBubble: {fileID: 5749752111271843774}
   nbCompletedTables: {fileID: 11400000, guid: a4c2549213729524ebe9829596d278e0, type: 2}
@@ -539,6 +541,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &974602565540170028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3036797699908041353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ee6f063040a78745bf48f56d7ca0554, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resetObservation: {fileID: 11400000, guid: 236bb24bfe45dc54aae525a142f5e637, type: 2}
 --- !u!1 &3036797700103764853
 GameObject:
   m_ObjectHideFlags: 0
@@ -1121,6 +1136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instantiatedTableware: {fileID: 11400000, guid: f7363cdaef43ea148b5e7726aec3db22, type: 2}
+  table: {fileID: 3036797699908041353}
 --- !u!1 &8580479099260489703
 GameObject:
   m_ObjectHideFlags: 0

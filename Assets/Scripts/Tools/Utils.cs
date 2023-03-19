@@ -3,6 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Utils {
+
+    private static int id = -1;
+
+    public static int GetUniqueId() {
+        return ++id;
+    }
+
     public static void EnablePhysics(GameObject obj, bool e) {
         if (obj.GetComponent<Collider>() != null)
             obj.GetComponent<Collider>().enabled = e;

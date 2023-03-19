@@ -21,6 +21,7 @@ public class BreakObject : MonoBehaviour {
         bool isBreaker = collision.gameObject.tag == "Tableware" || collision.gameObject.tag == "Breaker";
         if (isBreaker && !alreadyCollided) {
             GameObject brokenClone = Instantiate<GameObject>(brokenPrefab, transform.position, transform.rotation);
+            brokenClone.name += Utils.GetUniqueId();
             //Raise the broken object a little bit, otherwise it comes up with an explosion (can't really understand why...)
             brokenClone.transform.position = new Vector3(brokenClone.transform.position.x, brokenClone.transform.position.y + 0.5f, brokenClone.transform.position.z);
             brokenClone.transform.parent = transform.parent;

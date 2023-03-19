@@ -5,25 +5,25 @@ using UnityEngine;
 public class UpdateTablewareRegister : MonoBehaviour {
 
     public TablewareInstanceListSO instantiatedTableware;
+    public GameObject table;
 
     private void OnTriggerEnter(Collider other) {
 
         TablewareInstanceListSO.Container? container = instantiatedTableware.FindContainerWithCollider(other);
         if (container.HasValue) {
             GameObject owner = instantiatedTableware.FindOwner(container.Value.instance);
-            if (owner != gameObject) {
+            if (owner != table) {
                 instantiatedTableware.Remove(container.Value.instance);
-                instantiatedTableware.Add(gameObject, container.Value);
+                instantiatedTableware.Add(table, container.Value);
             }
         }
     }
 
     private void OnTriggerExit(Collider other) {
-        Debug.Log(other.name + " exit");
         TablewareInstanceListSO.Container? container = instantiatedTableware.FindContainerWithCollider(other);
         if (container.HasValue) {
             GameObject owner = instantiatedTableware.FindOwner(container.Value.instance);
-            if (owner == gameObject) {
+            if (owner == table) {
                 instantiatedTableware.Remove(container.Value.instance);
                 instantiatedTableware.Add(instantiatedTableware.GetDefaultOwner(), container.Value);
             }

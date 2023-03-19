@@ -1398,6 +1398,39 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 2749891167473402796, guid: a7cf2cc1da522bf4898692a0f10b6556, type: 3}
+--- !u!95 &4036426400778238550
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 240581927393309566}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 163cda18dc2d97647a384c8d6760b6e3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1721074062964362378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 240581927393309566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e295d295bbde7648b325aaf449bdfa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  observer: {fileID: 11400000, guid: 24259deba06250444947d44bde92fe49, type: 2}
 --- !u!1 &1491686542121216239 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5403800922384526842, guid: a7cf2cc1da522bf4898692a0f10b6556, type: 3}
@@ -1433,6 +1466,39 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 3802358872347870070, guid: a7cf2cc1da522bf4898692a0f10b6556, type: 3}
+--- !u!95 &147825801479387636
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1491686542121216239}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 163cda18dc2d97647a384c8d6760b6e3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6983457704972801469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1491686542121216239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e295d295bbde7648b325aaf449bdfa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  observer: {fileID: 11400000, guid: 4332d17ad30c64443b6569e9b0eb30ca, type: 2}
 --- !u!1 &2724233235894235574 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -323191553516620637, guid: a7cf2cc1da522bf4898692a0f10b6556, type: 3}
@@ -1468,6 +1534,39 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -7478181614662507352, guid: a7cf2cc1da522bf4898692a0f10b6556, type: 3}
+--- !u!95 &311113249905882238
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2724233235894235574}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 163cda18dc2d97647a384c8d6760b6e3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1067376354902598177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2724233235894235574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e295d295bbde7648b325aaf449bdfa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  observer: {fileID: 11400000, guid: c0c4500e6e53bbd4294a99c8eb7d42ef, type: 2}
 --- !u!1 &2954755947283790587 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8596465340478095342, guid: a7cf2cc1da522bf4898692a0f10b6556, type: 3}
@@ -1503,6 +1602,39 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -356641454838783074, guid: a7cf2cc1da522bf4898692a0f10b6556, type: 3}
+--- !u!95 &2014790829915215267
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2954755947283790587}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 163cda18dc2d97647a384c8d6760b6e3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3387568802560587077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2954755947283790587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e295d295bbde7648b325aaf449bdfa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  observer: {fileID: 11400000, guid: 13d3ffc5f5505334da53804dbeee149c, type: 2}
 --- !u!1 &4093670502857890842 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7386469556889524495, guid: a7cf2cc1da522bf4898692a0f10b6556, type: 3}
@@ -1538,6 +1670,39 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -5367935088126801849, guid: a7cf2cc1da522bf4898692a0f10b6556, type: 3}
+--- !u!95 &7374785631433640467
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4093670502857890842}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 163cda18dc2d97647a384c8d6760b6e3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3673057359222573674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4093670502857890842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e295d295bbde7648b325aaf449bdfa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  observer: {fileID: 11400000, guid: 52cdaf8858f965040b22bf00aefa364f, type: 2}
 --- !u!1 &4233809086863004033 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7245205077508461716, guid: a7cf2cc1da522bf4898692a0f10b6556, type: 3}
@@ -1573,6 +1738,39 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 1632624894982185478, guid: a7cf2cc1da522bf4898692a0f10b6556, type: 3}
+--- !u!95 &5976699185093420293
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4233809086863004033}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 163cda18dc2d97647a384c8d6760b6e3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &92375124629221887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4233809086863004033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e295d295bbde7648b325aaf449bdfa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  observer: {fileID: 11400000, guid: 94a3d9e51e8895a4ba92a8e8d284e620, type: 2}
 --- !u!4 &6469165993477841662 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a7cf2cc1da522bf4898692a0f10b6556, type: 3}
@@ -1613,6 +1811,39 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 8772052547990348051, guid: a7cf2cc1da522bf4898692a0f10b6556, type: 3}
+--- !u!95 &8129773492641502330
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7349120865298656290}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 163cda18dc2d97647a384c8d6760b6e3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4135627303615729641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7349120865298656290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e295d295bbde7648b325aaf449bdfa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  observer: {fileID: 11400000, guid: 999922f2898bf7c48b368b7dafa2869e, type: 2}
 --- !u!1 &7474934233178816225 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -5047993829086299148, guid: a7cf2cc1da522bf4898692a0f10b6556, type: 3}
@@ -1648,6 +1879,39 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 6944705884375371190, guid: a7cf2cc1da522bf4898692a0f10b6556, type: 3}
+--- !u!95 &1349857094011005428
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7474934233178816225}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 163cda18dc2d97647a384c8d6760b6e3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4382221803113784492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7474934233178816225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e295d295bbde7648b325aaf449bdfa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  observer: {fileID: 11400000, guid: d61bc7730fecac04cb9c0c15c89227f0, type: 2}
 --- !u!1 &8105659331379900784 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3328361850815345765, guid: a7cf2cc1da522bf4898692a0f10b6556, type: 3}
@@ -1683,6 +1947,39 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -2783441547388960722, guid: a7cf2cc1da522bf4898692a0f10b6556, type: 3}
+--- !u!95 &7430995467603134189
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8105659331379900784}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 163cda18dc2d97647a384c8d6760b6e3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8927153346231737505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8105659331379900784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e295d295bbde7648b325aaf449bdfa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  observer: {fileID: 11400000, guid: fbb526fafca05c743a7b3fee9f2eaf13, type: 2}
 --- !u!1 &8754621445786828374 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2824610863839066947, guid: a7cf2cc1da522bf4898692a0f10b6556, type: 3}
@@ -1718,3 +2015,36 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -4231094207986913878, guid: a7cf2cc1da522bf4898692a0f10b6556, type: 3}
+--- !u!95 &1201383571827590199
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8754621445786828374}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 163cda18dc2d97647a384c8d6760b6e3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &660350398648549827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8754621445786828374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e295d295bbde7648b325aaf449bdfa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  observer: {fileID: 11400000, guid: 34bff94a9df17804d8f45cdff078632c, type: 2}

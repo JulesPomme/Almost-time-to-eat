@@ -244,6 +244,8 @@ GameObject:
   - component: {fileID: 3507472594169888117}
   - component: {fileID: 6735000288948222938}
   - component: {fileID: -5378143298216092668}
+  - component: {fileID: -6071527530017660271}
+  - component: {fileID: -6357831742546711597}
   m_Layer: 0
   m_Name: Glass
   m_TagString: Tableware
@@ -351,6 +353,39 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 34618487000c0334bb24fdb8c4c9259a, type: 3}
     - {fileID: 8300000, guid: 6877aa78f05e10049a2661cc0bedb9e6, type: 3}
     volume: 0.5
+--- !u!95 &-6071527530017660271
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8382120999269282670}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 163cda18dc2d97647a384c8d6760b6e3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-6357831742546711597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8382120999269282670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e295d295bbde7648b325aaf449bdfa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  observer: {fileID: 11400000, guid: ef55fc329da3ee742880de433c145cf7, type: 2}
 --- !u!1001 &7335713594016295500
 PrefabInstance:
   m_ObjectHideFlags: 0

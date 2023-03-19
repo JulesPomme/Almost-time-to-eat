@@ -152,6 +152,8 @@ GameObject:
   - component: {fileID: 6809124475963871212}
   - component: {fileID: 5801935250843782141}
   - component: {fileID: 3296161359255722492}
+  - component: {fileID: 8313689969711554157}
+  - component: {fileID: 4706248259246769095}
   m_Layer: 0
   m_Name: Plate
   m_TagString: Tableware
@@ -294,6 +296,39 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 3f5490cfef96b624ba629cac03347ad2, type: 3}
     - {fileID: 8300000, guid: e439960af9cbaf2479b90ea59219c989, type: 3}
     volume: 0.5
+--- !u!95 &8313689969711554157
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6809124475963871209}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 163cda18dc2d97647a384c8d6760b6e3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4706248259246769095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6809124475963871209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e295d295bbde7648b325aaf449bdfa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  observer: {fileID: 11400000, guid: 6986c4e14be72ff469443d3635501433, type: 2}
 --- !u!1001 &6821479164585218799
 PrefabInstance:
   m_ObjectHideFlags: 0

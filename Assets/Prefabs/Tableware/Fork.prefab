@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 750007507486478389}
   - component: {fileID: 8755591569813243794}
   - component: {fileID: 6575346362514109062}
+  - component: {fileID: 35552483000638510}
+  - component: {fileID: 7618206645131635510}
   m_Layer: 0
   m_Name: Fork
   m_TagString: Tableware
@@ -115,6 +117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36dae92ed3d7dec41b048ac638e5ab2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  active: 1
   autoDestroyPlayerPrefab: {fileID: 2535032496034943566, guid: 97b2834e223a1b04ab2ca7ee269dc728, type: 3}
   surfaceToAudiosMap:
   - surfaces:
@@ -153,7 +156,39 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 5e711e967c4c27349aa063c86bf7f939, type: 3}
     - {fileID: 8300000, guid: ad5465f0960083547b2ec8e0ebdb5a95, type: 3}
     volume: 0.5
-  active: 1
+--- !u!95 &35552483000638510
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 750007507486478391}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 163cda18dc2d97647a384c8d6760b6e3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7618206645131635510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 750007507486478391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e295d295bbde7648b325aaf449bdfa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  observer: {fileID: 11400000, guid: c0bf961bf2fc2b340a756c6e4155ab62, type: 2}
 --- !u!1 &750007508315579875
 GameObject:
   m_ObjectHideFlags: 0

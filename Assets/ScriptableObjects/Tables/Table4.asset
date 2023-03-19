@@ -35,3 +35,4 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 48c82e009b13d584f8f8fcd0b6519063, type: 2}
     - {fileID: 11400000, guid: d1668b2c22958ea4ca134d00f40bbd02, type: 2}
     - {fileID: 11400000, guid: 85cd1b3dc67c7124a8057521c618bce5, type: 2}
+  howLongToRefreshInSeconds: 25

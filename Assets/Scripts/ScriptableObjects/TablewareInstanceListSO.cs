@@ -13,17 +13,7 @@ public class TablewareInstanceListSO : ScriptableObject {
 
     private Dictionary<GameObject, List<Container>> registerPerTable = new Dictionary<GameObject, List<Container>>();
     private GameObject defaultOwner;
-
-
-    private List<Container> RegisterAsList() {
-
-        List<Container> list = new List<Container>();
-        foreach (GameObject table in registerPerTable.Keys) {
-            list.AddRange(registerPerTable[table]);
-        }
-        return list;
-    }
-
+    
     public int Count() {
         int count = 0;
         foreach (GameObject table in registerPerTable.Keys) {
@@ -41,12 +31,26 @@ public class TablewareInstanceListSO : ScriptableObject {
     }
 
     public void Clear() {
-        foreach (GameObject table in registerPerTable.Keys) {
-            for (int i = 0; i < registerPerTable[table].Count; i++) {
-                Destroy(registerPerTable[table][i].instance);
+        foreach (GameObject owner in registerPerTable.Keys) {
+            for (int i = 0; i < registerPerTable[owner].Count; i++) {
+                Destroy(registerPerTable[owner][i].instance);
             }
         }
         registerPerTable.Clear();
+    }
+
+    public void ClearOwner(GameObject owner) {
+
+        if (registerPerTable.ContainsKey(owner)) {
+            for (int i = 0; i < registerPerTable[owner].Count; i++) {
+                Destroy(registerPerTable[owner][i].instance);
+            }
+            registerPerTable.Remove(owner);
+        }
+    }
+
+    public void ClearDefaultOwner() {
+        ClearOwner(defaultOwner);
     }
 
     public bool Remove(GameObject instance) {
@@ -112,6 +116,18 @@ public class TablewareInstanceListSO : ScriptableObject {
         return defaultOwner;
     }
 
+    public List<GameObject> GetTablewareInstances(GameObject owner) {
+
+        List<GameObject> res = new List<GameObject>();
+        List<Container> containers = registerPerTable[owner];
+        if(containers != null) {
+            foreach(Container c in containers) {
+                res.Add(c.instance);
+            }
+        }
+        return res;
+    }
+
     public static List<Collider> GetNestedPhysicalColliders(GameObject instance) {
         List<Collider> res = new List<Collider>();
         if (instance.GetComponent<Collider>() != null && !instance.GetComponent<Collider>().isTrigger) {
@@ -124,4 +140,5 @@ public class TablewareInstanceListSO : ScriptableObject {
         }
         return res;
     }
+
 }
