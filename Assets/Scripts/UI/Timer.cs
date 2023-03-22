@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Timer : MonoBehaviour
-{
+public class Timer : MonoBehaviour {
     public IntegerSO totalTimeInSeconds;
     public FloatSO currentTime;
     public AudioSource tick;
@@ -22,7 +21,9 @@ public class Timer : MonoBehaviour
         currentTime.value -= Time.deltaTime;
         currentTime.value = Mathf.Clamp(currentTime.value, 0, totalTimeInSeconds.value);
         int intTime = Mathf.CeilToInt(currentTime.value);
-        text.text = intTime.ToString();
+        int minutes = (intTime / 60);
+        int seconds = (intTime % 60);
+        text.text = minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
         if (intTime < 11 && intTime > 0 && !lastCountDownHasTicked[intTime - 1]) {
             tick.Play();
             lastCountDownHasTicked[intTime - 1] = true;
