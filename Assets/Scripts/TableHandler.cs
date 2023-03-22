@@ -119,7 +119,7 @@ public class TableHandler : MonoBehaviour {
         }
         InstantiateZones();
         bubbleSlider.localPosition = new Vector3(bubbleSlider.localPosition.x, minSliderBoundary, bubbleSlider.localPosition.z);
-        //TODO : ajouter un son d'apparation de la bubble (un sifflement ? ou un "hep serveur" ?) + une animation un peu plus chiadée
+        //TODO : ajouter un son d'apparation de la bubble (un sifflement ? ou un "hep serveur" ?)
         alertBubble.GetComponent<Animator>().SetBool("deactivate", false);
 
         tablewareRegister.ClearOwner(gameObject);
