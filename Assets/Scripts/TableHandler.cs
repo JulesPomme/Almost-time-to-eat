@@ -10,6 +10,7 @@ public class TableHandler : MonoBehaviour {
     public GameObject alertBubble;
     public IntegerSO nbCompletedTables;
     public RectTransform bubbleSlider;
+    public AudioClip[] alertSounds;
 
     private List<GameObject> zones;
     private int resetId;
@@ -75,7 +76,7 @@ public class TableHandler : MonoBehaviour {
 
         //If reset animations are complete, complete the reset process, destroy all the tableware, reinit the bubbleSlider, etc.
         if (CheckTablewareAnimatorObservers()) {
-            CompleteResetTable();
+            CompleteResetTable(true);
         }
     }
     public bool IsCompleted() {
@@ -112,15 +113,20 @@ public class TableHandler : MonoBehaviour {
         return tablewareAnimatorObservers.Count > 0 && allFinished;
     }
 
-    private void CompleteResetTable() {
+    private void CompleteResetTable(bool withDecoration = false) {
         while (zones.Count > 0) {
             Destroy(zones[zones.Count - 1]);
             zones.RemoveAt(zones.Count - 1);
         }
         InstantiateZones();
         bubbleSlider.localPosition = new Vector3(bubbleSlider.localPosition.x, minSliderBoundary, bubbleSlider.localPosition.z);
-        //TODO : ajouter un son d'apparation de la bubble (un sifflement ? ou un "hep serveur" ?)
         alertBubble.GetComponent<Animator>().SetBool("deactivate", false);
+        if (withDecoration) {
+            AudioSource alertAudio = alertBubble.GetComponent<AudioSource>();
+            alertAudio.clip = alertSounds[Random.Range(0, alertSounds.Length)];
+            alertAudio.pitch = Random.Range(0.8f, 1.2f);
+            alertAudio.Play();
+        }
 
         tablewareRegister.ClearOwner(gameObject);
         tablewareAnimatorObservers.Clear();
