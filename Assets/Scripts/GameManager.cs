@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour {
     public ScriptableObjectListSO availableTablewares;
     public TablewareInstanceListSO instantiatedTablewares;
+    public EventRegisterSO eventRegister;
     public IntegerSO timerTotalTime;
     public FloatSO currentTime;
     public IntegerSO score;
@@ -36,6 +37,7 @@ public class GameManager : MonoBehaviour {
         startGameAudioStarted = false;
         instantiatedTablewares.Clear();
         instantiatedTablewares.SetDefaultOwner(gameContainer);
+        eventRegister.Clear();
     }
 
     private void Update() {

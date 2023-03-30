@@ -13,7 +13,7 @@ public class TablewareInstanceListSO : ScriptableObject {
 
     private Dictionary<GameObject, List<Container>> registerPerTable = new Dictionary<GameObject, List<Container>>();
     private GameObject defaultOwner;
-    
+
     public int Count() {
         int count = 0;
         foreach (GameObject table in registerPerTable.Keys) {
@@ -119,9 +119,10 @@ public class TablewareInstanceListSO : ScriptableObject {
     public List<GameObject> GetTablewareInstances(GameObject owner) {
 
         List<GameObject> res = new List<GameObject>();
-        List<Container> containers = registerPerTable[owner];
-        if(containers != null) {
-            foreach(Container c in containers) {
+        List<Container> containers = new List<Container>();
+        if (registerPerTable.ContainsKey(owner)) {
+            containers.AddRange(registerPerTable[owner]);
+            foreach (Container c in containers) {
                 res.Add(c.instance);
             }
         }

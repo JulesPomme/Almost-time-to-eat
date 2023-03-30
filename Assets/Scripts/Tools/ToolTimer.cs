@@ -14,6 +14,10 @@ public class ToolTimer {
         startTime = time;
     }
 
+    public void Restart(float time) {
+        Start(time);
+    }
+
     public bool IsStarted() {
         return startTime != -1;
     }

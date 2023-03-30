@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63007f511f6cfe54eb4a7ee6b9537d32, type: 3}
-  m_Name: TableInstance
+  m_Script: {fileID: 11500000, guid: 0e8bb0a57414e1a4aa44fa1311427f25, type: 3}
+  m_Name: EventRegister
   m_EditorClassIdentifier: 
-  obj: {fileID: 0}
+  setTableEvent: {fileID: 11400000, guid: 2f0ab8d176883e24ea90105ab3d68bcb, type: 2}

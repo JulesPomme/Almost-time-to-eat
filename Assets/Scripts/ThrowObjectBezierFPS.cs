@@ -97,7 +97,7 @@ public class ThrowObjectBezierFPS : MonoBehaviour {
                 while (res == null && k < tableSO.instances.Count) {//for each table instance of the current table SO
                     GameObject tableInstance = tableSO.instances[k];
                     if (tableInstance != null) {
-                        if (tableInstance.GetComponent<TableHandler>().topSurface == objectToAssess) {
+                        if (tableInstance.GetComponent<TableEventHandler>().topSurface == objectToAssess) {
                             TableStruct tableStruct = new TableStruct();
                             tableStruct.reference = tableSO;
                             tableStruct.instance = tableInstance;
