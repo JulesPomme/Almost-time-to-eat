@@ -32,17 +32,18 @@ public class EventScheduler : MonoBehaviour {
 
         if (timer.GetElapsedTime(Time.time) >= 1) {//Possible event every second
             timer.Restart(Time.time);
-            float proba = Random.Range(0f, 100f);
+            int proba = Random.Range(0, 101);
+            Debug.Log(proba);
             bool triggerEvent = false;
             switch (eventRegister.HowManyEventsRightNow()) {
                 case 0:
                     triggerEvent = proba >= 0;
                     break;
-                //case 1:
-                //    triggerEvent = proba > 50;
-                //    break;
+                case 1:
+                    triggerEvent = proba > 95; //5% chance to trigger an event every second, i.e., on average, 5 triggers every 100 seconds, i.e., 1 trigger every 20 second.
+                    break;
                 //case 2:
-                //    triggerEvent = proba > 95;
+                //    triggerEvent = proba > 99;
                 //    break;
                 default:
                     break;
