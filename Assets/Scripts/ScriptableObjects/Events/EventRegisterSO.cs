@@ -6,13 +6,14 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Scriptable Objects/Events/Register")]
 public class EventRegisterSO : ScriptableObject {
 
-    public enum EventStatus {
-        INIT, WIP, NONE
-    }
+    public readonly static float PROGRESS_NONE = -2;
+    public readonly static float PROGRESS_INIT = -1;
+    public readonly static float PROGRESS_WIP_START = 0;
+    public static bool IS_PROGRESS_WIP(float i) { return i >= 0; }
 
-    Dictionary<GameObject, Dictionary<EventSO, EventStatus>> eventsPerTable = new Dictionary<GameObject, Dictionary<EventSO, EventStatus>>();
+    Dictionary<GameObject, Dictionary<EventSO, float>> eventsPerTable = new Dictionary<GameObject, Dictionary<EventSO, float>>();
 
-    public EventSO setTableEvent;
+    [SerializeField] private EventSO setTableEvent;
 
     public void Clear() {
         eventsPerTable.Clear();
@@ -20,10 +21,10 @@ public class EventRegisterSO : ScriptableObject {
 
     public void AddSetTableEvent(GameObject table) {
         if (!eventsPerTable.ContainsKey(table)) {
-            eventsPerTable[table] = new Dictionary<EventSO, EventStatus>();
+            eventsPerTable[table] = new Dictionary<EventSO, float>();
         }
         if (!eventsPerTable[table].ContainsKey(setTableEvent)) {
-            eventsPerTable[table][setTableEvent] = EventStatus.INIT;
+            eventsPerTable[table][setTableEvent] = PROGRESS_INIT;
         }
     }
 
@@ -35,17 +36,17 @@ public class EventRegisterSO : ScriptableObject {
         return res;
     }
 
-    public EventStatus GetSettingTableEventStatus(GameObject table) {
-        EventStatus res = EventStatus.NONE;
+    public float GetSettingTableEventProgress(GameObject table) {
+        float res = PROGRESS_NONE;
         if (eventsPerTable.ContainsKey(table) && eventsPerTable[table].ContainsKey(setTableEvent)) {
             res = eventsPerTable[table][setTableEvent];
         }
         return res;
     }
 
-    public void SetSettingTableEventToWIP(GameObject table) {
+    public void SetSettingTableEventProgress(GameObject table, float value) {
         if (eventsPerTable.ContainsKey(table)) {
-            eventsPerTable[table][setTableEvent] = EventStatus.WIP;
+            eventsPerTable[table][setTableEvent] = value;
         } else {
             throw new ArgumentNullException("No SetTableEvent found for table " + table.name + ". Can't set status to WIP. Create the event with the 'AddSetTableEvent' method first.");
         }
@@ -53,10 +54,9 @@ public class EventRegisterSO : ScriptableObject {
 
     public int HowManyEventsRightNow() {
         int count = 0;
-        foreach (Dictionary<EventSO, EventStatus> events in eventsPerTable.Values) {
+        foreach (Dictionary<EventSO, float> events in eventsPerTable.Values) {
             count += events.Count;
         }
         return count;
     }
-
 }

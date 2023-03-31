@@ -33,14 +33,14 @@ public class EventScheduler : MonoBehaviour {
         if (timer.GetElapsedTime(Time.time) >= 1) {//Possible event every second
             timer.Restart(Time.time);
             int proba = Random.Range(0, 101);
-            Debug.Log(proba);
+            //Debug.Log(proba);
             bool triggerEvent = false;
             switch (eventRegister.HowManyEventsRightNow()) {
                 case 0:
                     triggerEvent = proba >= 0;
                     break;
                 case 1:
-                    triggerEvent = proba > 95; //5% chance to trigger an event every second, i.e., on average, 5 triggers every 100 seconds, i.e., 1 trigger every 20 second.
+                    triggerEvent = proba > 95; //5% chance to trigger an event every second, i.e., on average, 5 triggers every 100 seconds, i.e., 1 per 20 seconds.
                     break;
                 //case 2:
                 //    triggerEvent = proba > 99;
@@ -49,8 +49,9 @@ public class EventScheduler : MonoBehaviour {
                     break;
             }
 
+            //Get list of available tables, i.e., tables that don't already have an event in progress.
             List<GameObject> availableTables = GetAvailableTablesForSetEvent();
-            availableTables.Remove(previousTable);
+            availableTables.Remove(previousTable);//Do not trigger an event twice in row on the same table.
             if (triggerEvent && availableTables.Count > 0) {
                 int index = Random.Range(0, availableTables.Count);
                 eventRegister.AddSetTableEvent(availableTables[index]);
@@ -62,7 +63,7 @@ public class EventScheduler : MonoBehaviour {
     private List<GameObject> GetAvailableTablesForSetEvent() {
         List<GameObject> res = new List<GameObject>();
         foreach (GameObject table in tableInstances) {
-            if (eventRegister.GetSettingTableEventStatus(table) == EventRegisterSO.EventStatus.NONE) {
+            if (eventRegister.GetSettingTableEventProgress(table) == EventRegisterSO.PROGRESS_NONE) {
                 res.Add(table);
             }
         }

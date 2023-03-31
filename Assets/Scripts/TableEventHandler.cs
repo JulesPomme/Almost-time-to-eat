@@ -35,21 +35,22 @@ public class TableEventHandler : MonoBehaviour {
 
     private void Update() {
 
-        if (eventRegister.GetSettingTableEventStatus(gameObject) == EventRegisterSO.EventStatus.INIT) {
+        //At receveiving a new event, start by removing potential old tablewares
+        if (eventRegister.GetSettingTableEventProgress(gameObject) == EventRegisterSO.PROGRESS_INIT) {
             listeningToRemovingAnim = true;
             RemoveOldTablewareAnim();
-            eventRegister.SetSettingTableEventToWIP(gameObject);
+            eventRegister.SetSettingTableEventProgress(gameObject, EventRegisterSO.PROGRESS_WIP_START);
         }
-        //If tableware removing animations are complete, complete the event process, destroy all the old tableware, init the bubbleSlider, etc.
+        //If old tableware removing animations are complete, complete the event process, destroy all the old tableware, init the bubbleSlider, etc.
         if (listeningToRemovingAnim && RemoveOldTablewareAnimIsDone()) {
             listeningToRemovingAnim = false;
             ClearTable();
             LaunchSetTableEvent();
         }
 
-        //If all tablewares of the table have been set
-        if (eventRegister.GetSettingTableEventStatus(gameObject) == EventRegisterSO.EventStatus.WIP) {
-            HandleSetTableEventCompletion();
+        //During an event, update the progress, eventually handle at finishing.
+        if (EventRegisterSO.IS_PROGRESS_WIP(eventRegister.GetSettingTableEventProgress(gameObject))) {
+            UpdateSetTableEventProgress();
         }
 
         //If reset is invoked
@@ -121,11 +122,13 @@ public class TableEventHandler : MonoBehaviour {
         maxZoneCount = zones.Count;
     }
 
-    private void HandleSetTableEventCompletion() {
+    private void UpdateSetTableEventProgress() {
         for (int i = zones.Count - 1; i >= 0; i--) {
             if (zones[i] == null) {
                 zones.RemoveAt(i);
-                float bubbleSliderY = minSliderBoundary + ((maxSliderBoundary - minSliderBoundary) * (maxZoneCount - zones.Count) / maxZoneCount);
+                float completionPercent = (maxZoneCount - zones.Count) / (float) maxZoneCount;
+                eventRegister.SetSettingTableEventProgress(gameObject, completionPercent);
+                float bubbleSliderY = minSliderBoundary + ((maxSliderBoundary - minSliderBoundary) * completionPercent);
                 bubbleSlider.localPosition = new Vector3(bubbleSlider.localPosition.x, bubbleSliderY, bubbleSlider.localPosition.z);
                 if (zones.Count == 0) {
                     alertBubble.GetComponent<Animator>().SetBool("deactivate", true);
