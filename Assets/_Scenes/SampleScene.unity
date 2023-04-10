@@ -7815,6 +7815,7 @@ MonoBehaviour:
   availableTablewares: {fileID: 11400000, guid: c6f2e875c6fe0444aa4483a1e8973d79, type: 2}
   instantiatedTablewares: {fileID: 11400000, guid: f7363cdaef43ea148b5e7726aec3db22, type: 2}
   eventRegister: {fileID: 11400000, guid: a13d335dde62d6a4b86d0bcb756412b2, type: 2}
+  animatorObserver: {fileID: 11400000, guid: d5a1501eaa7f7d04b96f1931bfbbb96c, type: 2}
   timerTotalTime: {fileID: 11400000, guid: 9071e5d18f22cbd468448eb90516cf94, type: 2}
   currentTime: {fileID: 11400000, guid: febb6a797379b47439db994b7f5f1a19, type: 2}
   score: {fileID: 11400000, guid: 883de69d597f89d44958831627ef2971, type: 2}

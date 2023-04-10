@@ -79,9 +79,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50eb32131807d814bba1831555eb3caf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ghostPrefab: {fileID: 0}
   basePosition: {fileID: 244858650010558410}
-  tableTopSurface: {fileID: 0}
 --- !u!1 &834042667512514670
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,6 +227,7 @@ GameObject:
   - component: {fileID: 1534484885217147775}
   - component: {fileID: 6708145258082147646}
   - component: {fileID: 4496308613541134827}
+  - component: {fileID: 739243910567820748}
   m_Layer: 0
   m_Name: Visual
   m_TagString: Untagged
@@ -321,6 +320,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &739243910567820748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1083953342252153017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e295d295bbde7648b325aaf449bdfa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  observer: {fileID: 11400000, guid: d5a1501eaa7f7d04b96f1931bfbbb96c, type: 2}
 --- !u!1 &4981576810073174524
 GameObject:
   m_ObjectHideFlags: 0

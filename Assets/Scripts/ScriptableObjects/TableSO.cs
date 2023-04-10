@@ -14,5 +14,5 @@ public class TableSO : ScriptableObject {
     }
 
     public OrientationBinder[] orientationBinders;
-    public int howLongToRefreshInSeconds;
+    public int settingTableTimer;
 }

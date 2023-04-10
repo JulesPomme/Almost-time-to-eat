@@ -43,4 +43,4 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 931e8e48539e2ec4785f2e43167d4efa, type: 2}
     - {fileID: 11400000, guid: 753a4736e5079914388d6cbd7f0345bf, type: 2}
     - {fileID: 11400000, guid: c6dd56f8c6cb33846af3bd1be2811197, type: 2}
-  howLongToRefreshInSeconds: 30
+  settingTableTimer: 45

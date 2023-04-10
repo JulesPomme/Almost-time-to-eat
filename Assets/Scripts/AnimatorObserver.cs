@@ -6,15 +6,11 @@ public class AnimatorObserver : MonoBehaviour
 {
     public AnimatorObserverSO observer;
 
-    private void Start() {
-        observer.Clear();
-    }
-
     public void AlertAnimationIsFinished(string animName) {
-        observer.SetState(animName, AnimatorObserverSO.State.FINISHED);
+        observer.SetState(gameObject, animName, AnimatorObserverSO.State.FINISHED);
     }
 
     public void AlertAnimationIsStarted(string animName) {
-        observer.SetState(animName, AnimatorObserverSO.State.STARTED);
+        observer.SetState(gameObject, animName, AnimatorObserverSO.State.STARTED);
     }
 }

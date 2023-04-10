@@ -49,6 +49,24 @@ public class TablewareInstanceListSO : ScriptableObject {
         }
     }
 
+    public void DestroyTableware(GameObject instance) {
+        bool found = false;
+        int i = 0;
+        List<GameObject> keys = new List<GameObject>(registerPerTable.Keys);
+        while (!found && i < keys.Count) {
+            int j = 0;
+            while (!found && j < registerPerTable[keys[i]].Count) {
+                if (registerPerTable[keys[i]][j].instance == instance) {
+                    found = true;
+                    Destroy(registerPerTable[keys[i]][j].instance);
+                    registerPerTable[keys[i]].Remove(registerPerTable[keys[i]][j]);
+                }
+                j++;
+            }
+            i++;
+        }
+    }
+
     public void ClearDefaultOwner() {
         ClearOwner(defaultOwner);
     }

@@ -9,18 +9,27 @@ public class AnimatorObserverSO : ScriptableObject {
         NONE, STARTED, FINISHED
     }
 
-    private Dictionary<string, State> stateRegister = new Dictionary<string, State>();
+    private Dictionary<GameObject, Dictionary<string, State>> stateRegister = new Dictionary<GameObject, Dictionary<string, State>>();
 
     public void Clear() {
         stateRegister.Clear();
     }
 
-    public void SetState(string animName, State state) {
-        stateRegister[animName] = state;
+    public void SetState(GameObject obj, string animName, State state) {
+        if (!stateRegister.ContainsKey(obj)) {
+            stateRegister[obj] = new Dictionary<string, State>();
+        }
+        stateRegister[obj][animName] = state;
     }
 
-    public State GetState(string animName) {
+    public State GetState(GameObject obj, string animName) {
+        State res = State.NONE;
+        if (stateRegister.ContainsKey(obj) && stateRegister[obj].ContainsKey(animName))
+            res = stateRegister[obj][animName];
+        return res;
+    }
 
-        return stateRegister.ContainsKey(animName) ? stateRegister[animName] : State.NONE;
+    public void StopObserving(GameObject obj) {
+        stateRegister.Remove(obj);
     }
 }

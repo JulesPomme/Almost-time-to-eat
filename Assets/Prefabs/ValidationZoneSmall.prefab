@@ -95,6 +95,10 @@ PrefabInstance:
       propertyPath: nbSlices
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4496308613541134827, guid: ab799d5327cc48a4484e6daafb31d53e, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: d23c4d56a7e0dcb4088bffa53782f503, type: 2}
     - target: {fileID: 6506307623946403681, guid: ab799d5327cc48a4484e6daafb31d53e, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.75

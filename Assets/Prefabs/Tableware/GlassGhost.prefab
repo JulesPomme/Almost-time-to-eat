@@ -176,6 +176,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8382120999269282578}
   - component: {fileID: 1011930059835954751}
+  - component: {fileID: 7116490694782064726}
   m_Layer: 0
   m_Name: GlassGhost
   m_TagString: Untagged
@@ -221,6 +222,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7116490694782064726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8382120999269282670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e295d295bbde7648b325aaf449bdfa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  observer: {fileID: 11400000, guid: d5a1501eaa7f7d04b96f1931bfbbb96c, type: 2}
 --- !u!1001 &8247878207337722978
 PrefabInstance:
   m_ObjectHideFlags: 0
