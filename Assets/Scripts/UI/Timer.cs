@@ -12,8 +12,12 @@ public class Timer : MonoBehaviour {
     private bool[] lastCountDownHasTicked;
 
     void Start() {
-        currentTime.value = totalTimeInSeconds.value;
         text = GetComponent<TMP_Text>();
+        Init();
+    }
+
+    private void Init() {
+        currentTime.value = totalTimeInSeconds.value;
         lastCountDownHasTicked = new bool[] { false, false, false, false, false, false, false, false, false, false };
     }
 
@@ -27,6 +31,8 @@ public class Timer : MonoBehaviour {
         if (intTime < 11 && intTime > 0 && !lastCountDownHasTicked[intTime - 1]) {
             tick.Play();
             lastCountDownHasTicked[intTime - 1] = true;
+            int prev = intTime % 10;
+            lastCountDownHasTicked[prev] = false;
         }
     }
 }

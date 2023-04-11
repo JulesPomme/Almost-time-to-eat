@@ -21,8 +21,8 @@ public class TableEventHandler : MonoBehaviour {
 
     private List<GameObject> zones;
     private int resetId;
-    private float minSliderBoundary = -85;
-    private float maxSliderBoundary = -13;
+    private float minSliderBoundary = -91;
+    private float maxSliderBoundary = -10;
     private int maxZoneCount;
     private bool listeningToRemovingAnimAfterInit;
     private bool listeningToRemovingAnimAfterTimeUp;
