@@ -48,7 +48,9 @@ public class TableEventHandler : MonoBehaviour {
             listeningToRemovingAnimAfterInit = true;
             eventRegister.SetSettingTableEventProgress(gameObject, EventRegisterSO.PROGRESS_WIP_START);
             eventTimer.Start(Time.time);
+            bubbleTimer.fillAmount = 0;
         }
+
         //If old tableware removing animations are complete, complete the event process, destroy all the old tableware, init the bubbleSlider, etc.
         if (listeningToRemovingAnimAfterInit && IsRemovingAnimationDone()) {
             listeningToRemovingAnimAfterInit = false;
@@ -57,12 +59,10 @@ public class TableEventHandler : MonoBehaviour {
 
         //If time is up, removing animation has been called, we must now reset the table.
         if (listeningToRemovingAnimAfterTimeUp && IsRemovingAnimationDone()) {
-            //Debug.Log(gameObject.name + ": Time is up, removing animation is done, clear the table");
             listeningToRemovingAnimAfterTimeUp = false;
             eventRegister.RemoveSetTableEvent(gameObject);
             alertBubble.GetComponent<Animator>().SetBool("appear", false);
             alertBubble.GetComponent<Animator>().SetBool("win", false);
-            bubbleTimer.fillAmount = 0;
         }
 
         //During an event, update the progress, eventually handle at finishing.
@@ -135,13 +135,14 @@ public class TableEventHandler : MonoBehaviour {
     }
 
     private void ClearTable() {
-            ClearZones();
-            tablewareRegister.ClearOwner(gameObject);
+        ClearZones();
+        tablewareRegister.ClearOwner(gameObject);
     }
 
     private void LaunchSetTableEvent() {
         InstantiateZones();
         bubbleSlider.localPosition = new Vector3(bubbleSlider.localPosition.x, minSliderBoundary, bubbleSlider.localPosition.z);
+        alertBubble.GetComponent<Animator>().SetBool("win", false);
         alertBubble.GetComponent<Animator>().SetBool("appear", true);
         AudioSource alertAudio = alertBubble.GetComponent<AudioSource>();
         alertAudio.clip = alertSounds[Random.Range(0, alertSounds.Length)];
@@ -167,9 +168,9 @@ public class TableEventHandler : MonoBehaviour {
     }
 
     private void UpdateSetTableEventProgress() {
-     
+
         //Regular situation: when nothing is on the table, set the alert bubble animation to default state
-        if(zones.Count == 0) {
+        if (zones.Count == 0) {
             alertBubble.GetComponent<Animator>().SetBool("appear", false);
             alertBubble.GetComponent<Animator>().SetBool("win", false);
         }
@@ -185,6 +186,7 @@ public class TableEventHandler : MonoBehaviour {
                 bubbleSlider.localPosition = new Vector3(bubbleSlider.localPosition.x, bubbleSliderY, bubbleSlider.localPosition.z);
                 //If this was the last zone, trigger the win animation and sound
                 if (zones.Count == 0) {
+                    alertBubble.GetComponent<Animator>().SetBool("appear", false);
                     alertBubble.GetComponent<Animator>().SetBool("win", true);
                     GetComponent<AudioSource>().Play();
                     nbCompletedTables.value++;
@@ -196,10 +198,9 @@ public class TableEventHandler : MonoBehaviour {
         //Check the event timer, cancel event if time is up
         float elapsedTimePercent = eventTimer.GetElapsedTime(Time.time) / (float)table.settingTableTimer;
         if (elapsedTimePercent >= 1) {
-            //AnimateOldObjectsRemoving();
             listeningToRemovingAnimAfterTimeUp = true;
             eventTimer.Stop();
-        } else {
+        } else if (elapsedTimePercent >= 0) { // when no event is registered, the elapsed time is negative => no need to update.
             bubbleTimer.fillAmount = elapsedTimePercent;
         }
     }
