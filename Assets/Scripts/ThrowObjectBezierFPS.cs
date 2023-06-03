@@ -41,8 +41,9 @@ public class ThrowObjectBezierFPS : MonoBehaviour {
 
             if (Input.GetMouseButtonUp(0) && tablewareInHand.obj != null) {//...and throw an object at mouse releasing...
                 GameObject tw = tablewareInHand.obj;
-                tw.transform.position = throwingPoint.value;
-                TableStruct? tableStruct = GetTableUnder(target);
+                //tw.transform.position = throwingPoint.value;
+                tw.transform.localPosition = tablewareInHand.reference.throwLocalPosition;
+                TableStruct ? tableStruct = GetTableUnder(target);
                 bool applyDefaultRotation = true;
                 if (tableStruct.HasValue) {//if object is thrown on a table
                     Vector3? anchor = GetAnchorWithNearestCompass(tableStruct.Value, target);
@@ -53,10 +54,11 @@ public class ThrowObjectBezierFPS : MonoBehaviour {
                     }
                 }
                 if (applyDefaultRotation) {
-                    Quaternion defaultRotation = Quaternion.LookRotation(Camera.main.transform.forward, Camera.main.transform.up);//Quick and dirty...
-                    tw.transform.rotation = defaultRotation;
+                    tw.transform.localEulerAngles = tablewareInHand.reference.throwLocalRotation;
+                    //Quaternion defaultRotation = Quaternion.LookRotation(Camera.main.transform.forward, Camera.main.transform.up);//Quick and dirty...
+                    //tw.transform.rotation = defaultRotation;
                 }
-                tw.transform.parent = transform.parent;
+                tw.transform.SetParent(transform.parent, true);
 
                 StartCoroutine(ThrowObjectWithBezierCoroutine(tw, hit.point));
 

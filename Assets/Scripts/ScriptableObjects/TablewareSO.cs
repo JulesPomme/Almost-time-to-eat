@@ -12,6 +12,8 @@ public class TablewareSO : ScriptableObject {
     public Vector3 idleLocalOrientation;
     public Vector3 holdLocalPosition;
     public Vector3 holdLocalRotation;
+    public Vector3 throwLocalPosition;
+    public Vector3 throwLocalRotation;
     public int initAmmo;
     public int ammo;
 }

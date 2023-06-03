@@ -169,12 +169,6 @@ public class TableEventHandler : MonoBehaviour {
 
     private void UpdateSetTableEventProgress() {
 
-        //Regular situation: when nothing is on the table, set the alert bubble animation to default state
-        if (zones.Count == 0) {
-            alertBubble.GetComponent<Animator>().SetBool("appear", false);
-            alertBubble.GetComponent<Animator>().SetBool("win", false);
-        }
-
         //If one or more zones are on the table, loop
         for (int i = zones.Count - 1; i >= 0; i--) {
             //This zone has been validated recently, remove the object, update the bubble
