@@ -10,6 +10,7 @@ public class TableEventHandler : MonoBehaviour {
     public EventRegisterSO eventRegister;
     public ObservationSO resetObservation;
     public IntegerSO nbCompletedTables;
+    public IntegerSO missedTables;
     public AnimatorObserverSO animatorObserver;
 
 
@@ -190,10 +191,11 @@ public class TableEventHandler : MonoBehaviour {
         }
 
         //Check the event timer, cancel event if time is up
-        float elapsedTimePercent = eventTimer.GetElapsedTime(Time.time) / (float)table.settingTableTimer;
+        float elapsedTimePercent = eventTimer.GetElapsedTime(Time.time) / table.settingTableTimer;
         if (elapsedTimePercent >= 1) {
             listeningToRemovingAnimAfterTimeUp = true;
             eventTimer.Stop();
+            missedTables.value++;
         } else if (elapsedTimePercent >= 0) { // when no event is registered, the elapsed time is negative => no need to update.
             bubbleTimer.fillAmount = elapsedTimePercent;
         }

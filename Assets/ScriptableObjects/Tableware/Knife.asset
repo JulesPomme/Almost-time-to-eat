@@ -19,7 +19,7 @@ MonoBehaviour:
   idleLocalOrientation: {x: -66.585, y: -16.869, z: 34.693565}
   holdLocalPosition: {x: 0.691, y: -0.76, z: 1.721}
   holdLocalRotation: {x: -60.376, y: -32.395, z: 48.623}
-  throwLocalPosition: {x: -0.593, y: 0.221, z: 0.194}
-  throwLocalRotation: {x: 0, y: 0, z: 0}
+  throwLocalPosition: {x: 0.757, y: -0.122, z: 1.772}
+  throwLocalRotation: {x: 312.8, y: 57.1, z: 332.7}
   initAmmo: 7
-  ammo: 7
+  ammo: 4

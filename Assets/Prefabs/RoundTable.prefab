@@ -538,6 +538,7 @@ MonoBehaviour:
   eventRegister: {fileID: 11400000, guid: a13d335dde62d6a4b86d0bcb756412b2, type: 2}
   resetObservation: {fileID: 11400000, guid: 236bb24bfe45dc54aae525a142f5e637, type: 2}
   nbCompletedTables: {fileID: 11400000, guid: a4c2549213729524ebe9829596d278e0, type: 2}
+  missedTables: {fileID: 11400000, guid: db33fe4eda2544e419e4caaa8bebd3d4, type: 2}
   animatorObserver: {fileID: 11400000, guid: d5a1501eaa7f7d04b96f1931bfbbb96c, type: 2}
   topSurface: {fileID: 8278296896005828040}
   alertBubble: {fileID: 5749752111271843774}

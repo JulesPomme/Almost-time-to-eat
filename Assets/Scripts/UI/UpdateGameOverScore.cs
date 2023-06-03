@@ -8,7 +8,7 @@ public class UpdateGameOverScore : MonoBehaviour
     public TablewareInstanceListSO instantiatedTableware;
     public ScriptableObjectListSO tablewareWaveListSO;
     public IntegerSO score;
-    public FloatSO currentTime;
+    public IntegerSO missedTables;
     public IntegerSO brokenCount;
     public IntegerSO nbCompletedTables;
 
@@ -16,7 +16,7 @@ public class UpdateGameOverScore : MonoBehaviour
     public TMP_Text nbCompletedTableText;
     public TMP_Text tablewareUsedText;
     public TMP_Text tablewareBrokenText;
-    public TMP_Text remainingTimeText;
+    public TMP_Text missedTableText;
 
     private void OnEnable() {
 
@@ -29,6 +29,7 @@ public class UpdateGameOverScore : MonoBehaviour
         nbCompletedTableText.text = nbCompletedTables.value.ToString();
         tablewareUsedText.text = instantiatedTableware.Count().ToString();
         tablewareBrokenText.text = brokenCount.value.ToString();
-        remainingTimeText.text = Mathf.CeilToInt(currentTime.value).ToString();
+        missedTableText.text = missedTables.value.ToString();
+
     }
 }

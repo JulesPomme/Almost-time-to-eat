@@ -6259,6 +6259,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 1487722946}
+--- !u!114 &1493398397 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3961217870958097625, guid: f4d51236c706abb4585114c59b957c5d, type: 3}
+  m_PrefabInstance: {fileID: 8091123070977253866}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1507035956
 GameObject:
   m_ObjectHideFlags: 0
@@ -8647,6 +8658,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1313750469649798435, guid: f4d51236c706abb4585114c59b957c5d, type: 3}
+      propertyPath: m_text
+      value: Missed Tables
+      objectReference: {fileID: 0}
     - target: {fileID: 1516897034540707107, guid: f4d51236c706abb4585114c59b957c5d, type: 3}
       propertyPath: m_text
       value: Completed tables
@@ -8659,6 +8674,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2175791333897243391, guid: f4d51236c706abb4585114c59b957c5d, type: 3}
+      propertyPath: missedTables
+      value: 
+      objectReference: {fileID: 11400000, guid: db33fe4eda2544e419e4caaa8bebd3d4, type: 2}
+    - target: {fileID: 2175791333897243391, guid: f4d51236c706abb4585114c59b957c5d, type: 3}
+      propertyPath: missedTableText
+      value: 
+      objectReference: {fileID: 1493398397}
     - target: {fileID: 2175791333897243391, guid: f4d51236c706abb4585114c59b957c5d, type: 3}
       propertyPath: nbCompletedTables
       value: 
@@ -8677,7 +8700,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2450048109198546681, guid: f4d51236c706abb4585114c59b957c5d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2450048109198546682, guid: f4d51236c706abb4585114c59b957c5d, type: 3}
       propertyPath: m_RootOrder
@@ -8722,6 +8745,10 @@ PrefabInstance:
     - target: {fileID: 2450048109198546682, guid: f4d51236c706abb4585114c59b957c5d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2961618416068215195, guid: f4d51236c706abb4585114c59b957c5d, type: 3}
+      propertyPath: m_Name
+      value: Missed tables
       objectReference: {fileID: 0}
     - target: {fileID: 3444703376210030639, guid: f4d51236c706abb4585114c59b957c5d, type: 3}
       propertyPath: m_text
