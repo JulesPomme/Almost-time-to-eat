@@ -29,15 +29,23 @@ public class ArmStateView : MonoBehaviour {
             if (currentModel.IsIdle()) {
                 animator.ResetTrigger("hold");
                 animator.ResetTrigger("throw");
+                animator.ResetTrigger("empty");
                 animator.SetTrigger("idle");
             } else if (currentModel.IsHold()) {
                 animator.ResetTrigger("idle");
                 animator.ResetTrigger("throw");
+                animator.ResetTrigger("empty");
                 animator.SetTrigger("hold");
             } else if (currentModel.IsThrow()) {
                 animator.ResetTrigger("idle");
                 animator.ResetTrigger("hold");
+                animator.ResetTrigger("empty");
                 animator.SetTrigger("throw");
+            } else if (currentModel.IsThrowEmpty()) {
+                animator.ResetTrigger("idle");
+                animator.ResetTrigger("hold");
+                animator.ResetTrigger("throw");
+                animator.SetTrigger("empty");
             }
         }
 
@@ -88,5 +96,9 @@ public class ArmStateView : MonoBehaviour {
     /// </summary>
     public void ThrowAnimationIsFinished() {
         currentModel.AlertThrowAnimationIsFinished();
+    }
+
+    public void ThrowEmptyAnimationIsFinished() {
+        currentModel.AlertThrowEmptyAnimationIsFinished();
     }
 }

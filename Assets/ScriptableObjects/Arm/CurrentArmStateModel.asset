@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5283c62dda339bb4380e90686e38c67d, type: 3}
   m_Name: CurrentArmStateModel
   m_EditorClassIdentifier: 
-  currentArmState: {fileID: 0}
   idleState: {fileID: 11400000, guid: 8626c730817aaef4aaad8b69044eead0, type: 2}
   holdState: {fileID: 11400000, guid: 76be85d51dc43bd40809cec7112c99d5, type: 2}
   throwState: {fileID: 11400000, guid: eb5f658e7caf0514e886f3be83eb924d, type: 2}
+  throwEmptyState: {fileID: 11400000, guid: 70b63e32c0f677742ac9f8e37d8f1af8, type: 2}

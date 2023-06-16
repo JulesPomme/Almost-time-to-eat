@@ -8,11 +8,13 @@ public class ArmStateModelSO : ScriptableObject {
     public ArmStateSO idleState;
     public ArmStateSO holdState;
     public ArmStateSO throwState;
+    public ArmStateSO throwEmptyState;
     private ArmStateSO currentArmState;
     private ArmStateSO previousArmState;
 
     private bool isControllerStarted;
     private bool throwAnimationIsOn;
+    private bool throwEmptyAnimationIsOn;
 
     public void Init() {
         previousArmState = null;
@@ -23,16 +25,25 @@ public class ArmStateModelSO : ScriptableObject {
     public void SetToIdle() {
         currentArmState = idleState;
         throwAnimationIsOn = false;
+        throwEmptyAnimationIsOn = false;
     }
 
     public void SetToHold() {
         currentArmState = holdState;
         throwAnimationIsOn = false;
+        throwEmptyAnimationIsOn = false;
     }
 
     public void SetToThrow() {
         currentArmState = throwState;
         throwAnimationIsOn = true;
+        throwEmptyAnimationIsOn = false;
+    }
+
+    public void SetToThrowEmpty() {
+        currentArmState = throwEmptyState;
+        throwAnimationIsOn = false;
+        throwEmptyAnimationIsOn = true;
     }
 
     public bool IsIdle() {
@@ -47,12 +58,24 @@ public class ArmStateModelSO : ScriptableObject {
         return currentArmState == holdState;
     }
 
+    public bool IsThrowEmpty() {
+        return currentArmState == throwEmptyState;
+    }
+
     public void AlertThrowAnimationIsFinished() {
         throwAnimationIsOn = false;
     }
 
+    public void AlertThrowEmptyAnimationIsFinished() {
+        throwEmptyAnimationIsOn = false;
+    }
+
     public bool IsThrowAnimationOn() {
         return throwAnimationIsOn;
+    }
+
+    public bool IsThrowEmptyAnimationOn() {
+        return throwEmptyAnimationIsOn;
     }
 
     public void PrintCurrentState() {
@@ -62,6 +85,8 @@ public class ArmStateModelSO : ScriptableObject {
             Debug.Log("### Arm state is hold");
         } else if (currentArmState == throwState) {
             Debug.Log("### Arm state is throw");
+        } else if (currentArmState == throwEmptyState) {
+            Debug.Log("### Arm state is throw empty");
         } else {
             Debug.Log("### Arm state is unknown");
         }
