@@ -7,6 +7,8 @@ public class ArmStateController : MonoBehaviour {
     public ArmStateModelSO currentModel;
     public BooleanSO canThrow;
     public ScriptableObjectListSO availableTablewares;
+    public AudioClip emptyThrowClip;
+    public AudioSource audioSource;
 
     private int lastCursor;
 
@@ -20,17 +22,18 @@ public class ArmStateController : MonoBehaviour {
 
         currentModel.UpdatePreviousArmState();
         if (canThrow.yes) {
-            Debug.Log("can throw");
             if (Input.GetMouseButton(0)) {
                 currentModel.SetToHold();
             } else if (Input.GetMouseButtonUp(0)) {
                 currentModel.SetToThrow();
             }
         } else {
-            Debug.Log("can NOT throw");
             if (Input.GetMouseButtonDown(0)) {
-                Debug.Log("$$$$$$");
                 currentModel.SetToThrowEmpty();
+                audioSource.clip = emptyThrowClip;
+                audioSource.volume = 1f;
+                audioSource.pitch = Random.Range(0.8f, 1.2f);
+                audioSource.Play();
             }
         }
 

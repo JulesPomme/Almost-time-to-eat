@@ -6,13 +6,15 @@ public class ThrowObjectBezierFPS : MonoBehaviour {
     public Vector3SO throwingPoint;
     public FloatSO throwingForceMax;
     public TablewareInstanceListSO instantiatedTablewares;
-    public AudioSource woosh;
+    public AudioClip woosh;
+    public AudioSource audioSource;
     public float throwingDuration = 1f;
     public ScriptableObjectListSO tableList;
     public ScriptableObjectListSO availableTablewares;
     public TablewareInstanceSO tablewareInHand;
     public GameObject targetPrefab;
     public BooleanSO canThrow;
+    public LayerMask playerBodyMask;
 
     private GameObject target;
 
@@ -31,7 +33,7 @@ public class ThrowObjectBezierFPS : MonoBehaviour {
         Ray ray = Camera.main.ViewportPointToRay(new Vector2(0.5f, 0.5f));
         RaycastHit hit;
         //If the player is pointing something and ammo are available...
-        canThrow.yes = Physics.Raycast(ray, out hit) && tablewareInHand.reference.ammo > 0;
+        canThrow.yes = Physics.Raycast(ray, out hit, float.MaxValue, ~playerBodyMask) && tablewareInHand.reference.ammo > 0;
         if (canThrow.yes) {
             target.SetActive(true);
             //...compute and show the target point if required...
@@ -43,7 +45,7 @@ public class ThrowObjectBezierFPS : MonoBehaviour {
                 GameObject tw = tablewareInHand.obj;
                 //tw.transform.position = throwingPoint.value;
                 tw.transform.localPosition = tablewareInHand.reference.throwLocalPosition;
-                TableStruct ? tableStruct = GetTableUnder(target);
+                TableStruct? tableStruct = GetTableUnder(target);
                 bool applyDefaultRotation = true;
                 if (tableStruct.HasValue) {//if object is thrown on a table
                     Vector3? anchor = GetAnchorWithNearestCompass(tableStruct.Value, target);
@@ -59,6 +61,7 @@ public class ThrowObjectBezierFPS : MonoBehaviour {
                     //tw.transform.rotation = defaultRotation;
                 }
                 tw.transform.SetParent(transform.parent, true);
+                Utils.SetLayerRecursively(tw, gameObject.layer);
 
                 StartCoroutine(ThrowObjectWithBezierCoroutine(tw, hit.point));
 
@@ -67,8 +70,10 @@ public class ThrowObjectBezierFPS : MonoBehaviour {
                 container.reference = (TablewareSO)availableTablewares.list[availableTablewares.cursor];
                 container.physicalColliders = TablewareInstanceListSO.GetNestedPhysicalColliders(tw);
                 instantiatedTablewares.Add(instantiatedTablewares.GetDefaultOwner(), container);
-                woosh.pitch = Random.Range(0.8f, 1.2f);
-                woosh.Play();
+                audioSource.clip = woosh;
+                audioSource.volume = 0.7f;
+                audioSource.pitch = Random.Range(0.8f, 1.2f);
+                audioSource.Play();
 
                 //Decrease ammo
                 tablewareInHand.reference.ammo--;

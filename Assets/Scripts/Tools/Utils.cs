@@ -48,4 +48,20 @@ public class Utils {
         }
         return name;
     }
+
+    /// <summary>
+    /// Apply the specified layer to the specified gameobject and all of its children.
+    /// </summary>
+    /// <param name="go"></param>
+    /// <param name="layer"></param>
+    public static void SetLayerRecursively(GameObject go, int layer) {
+        if (go == null)
+            return;
+        go.layer = layer;
+        foreach (Transform child in go.transform) {
+            if (child == null)
+                continue;
+            SetLayerRecursively(child.gameObject, layer);
+        }
+    }
 }

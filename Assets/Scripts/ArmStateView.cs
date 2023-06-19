@@ -84,6 +84,7 @@ public class ArmStateView : MonoBehaviour {
             GameObject clone = Instantiate(tableware.prefab);
             clone.name += Utils.GetUniqueId();
             clone.transform.parent = transform;
+            Utils.SetLayerRecursively(clone, gameObject.layer);
             Utils.EnablePhysics(clone, false);
             tablewareInHand.obj = clone;
             UpdateTablewareInHandTransform();
