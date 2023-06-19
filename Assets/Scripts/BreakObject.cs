@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class BreakObject : MonoBehaviour {
     public GameObject brokenPrefab;
@@ -34,6 +35,12 @@ public class BreakObject : MonoBehaviour {
                 container.instance = piece;
                 container.physicalColliders = TablewareInstanceListSO.GetNestedPhysicalColliders(piece);
                 instantiatedTablewares.Add(owner, container);
+
+                //Transfer virtual velocity of this gameobject to the piece (virtual because the object is thrown via a Bezier curve, without using physics
+                Rigidbody pieceRgbd = piece.GetComponent<Rigidbody>();
+                if (pieceRgbd != null) {
+                    pieceRgbd.AddExplosionForce(2, gameObject.transform.position, 1);
+                }
             }
 
             brokenCount.value++;
