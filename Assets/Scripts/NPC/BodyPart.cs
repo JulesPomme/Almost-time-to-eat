@@ -8,6 +8,7 @@ public class BodyPart : MonoBehaviour {
     public Rigidbody rgbd;
     private bool isCollidedByTableware;
     private List<GameObject> collisionings;
+    private Vector3 impactDirection;
 
     public void Awake() {
         rgbd = GetComponent<Rigidbody>();
@@ -18,17 +19,19 @@ public class BodyPart : MonoBehaviour {
     private void OnCollisionEnter(Collision collision) {
         if (collision.gameObject.tag == "Tableware") {
             isCollidedByTableware = true;
-            collisionings.Add(collision.gameObject);
+            if (!collisionings.Contains(collision.gameObject)) {
+                collisionings.Add(collision.gameObject);
+            }
+            impactDirection = collision.GetContact(0).normal;
         }
     }
 
-    //private void OnCollisionExit(Collision collision) {
-    //    if (collision.gameObject.tag == "Tableware") {
-    //        Debug.Log("*" + name + " uncollides with " + collision.gameObject.name);
-    //        isCollidedByTableware = false;
-    //        collisionings.Remove(collision.gameObject);
-    //    }
-    //}
+    private void OnCollisionExit(Collision collision) {
+        if (collision.gameObject.tag == "Tableware") {
+            isCollidedByTableware = false;
+            collisionings.Remove(collision.gameObject);
+        }
+    }
 
     private void Update() {
         int i = collisionings.Count - 1;
@@ -42,5 +45,9 @@ public class BodyPart : MonoBehaviour {
 
     public bool IsCollidedByTableware() {
         return isCollidedByTableware;
+    }
+
+    public Vector3 GetImpactDirection() {
+        return impactDirection;
     }
 }

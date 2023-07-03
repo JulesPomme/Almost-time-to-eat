@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Ragdoll : MonoBehaviour {
-    public bool activateAtStart = false;
 
+    public bool activateAtStart = false;
     public BodyPart[] bodyParts;
+    public float impactForce = 5;
+
     private bool active;
     private bool isCollidedByTableware;
 
@@ -26,14 +28,16 @@ public class Ragdoll : MonoBehaviour {
     }
 
     void Update() {
-
-        foreach (BodyPart bp in bodyParts) {
-            isCollidedByTableware |= bp.IsCollidedByTableware();
+        int i = 0;
+        while (!isCollidedByTableware && i < bodyParts.Length) {
+            isCollidedByTableware |= bodyParts[i].IsCollidedByTableware();
+            i++;
         }
 
         if (isCollidedByTableware) {
             SetActive(true);
             isCollidedByTableware = false;
+            bodyParts[i - 1].rgbd.AddForce(bodyParts[i - 1].GetImpactDirection() * impactForce, ForceMode.Impulse);
         }
 
         if (Input.GetKeyDown(KeyCode.Space)) {
