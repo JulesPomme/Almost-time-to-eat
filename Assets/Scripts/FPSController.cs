@@ -43,7 +43,7 @@ public class FPSController : MonoBehaviour {
             float speedZ = Input.GetAxis("Horizontal") * walkingSpeed;
             float speedX = Input.GetAxis("Vertical") * walkingSpeed;
 
-            moveDirection = right * speedZ + forward * speedX;
+            moveDirection = right * speedZ + forward * speedX + 9.8f * Vector3.down; //Last one is gravity
 
             characterController.Move(moveDirection * Time.deltaTime);
 

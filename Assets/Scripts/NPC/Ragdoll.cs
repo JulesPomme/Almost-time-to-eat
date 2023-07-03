@@ -10,8 +10,10 @@ public class Ragdoll : MonoBehaviour {
 
     private bool active;
     private bool isCollidedByTableware;
+    private Animator animator;
 
     private void Start() {
+        animator = GetComponent<Animator>();
         SetActive(activateAtStart);
         isCollidedByTableware = false;
     }
@@ -21,6 +23,7 @@ public class Ragdoll : MonoBehaviour {
     }
 
     public void SetActive(bool b) {
+        animator.enabled = !b;
         foreach (BodyPart bp in bodyParts) {
             bp.rgbd.isKinematic = !b;
         }
